@@ -3,76 +3,301 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BLOCK ISLAND: HIDDEN HISTORY - PORTAL</title>
+    <title>BLOCK ISLAND: HIDDEN HISTORY - LOST SECRETS</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Special+Elite&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Shadows+Into+Light&display=swap" rel="stylesheet">
 </head>
-<body class="portal-page">
+<body class="portal-page parallax">
     <div class="noise-overlay"></div>
+    <div class="film-grain-overlay"></div>
+    <div class="vhs-effect"></div>
     
-    <div class="portal-container">
+    <!-- Quick access navigation -->
+    <div class="quick-access-container">
+        <a href="index.html" class="quick-access-link">
+            <div class="quick-access-item">
+                <div class="quick-access-icon">🏠</div>
+                <div class="quick-access-label">HOME</div>
+            </div>
+        </a>
+        
+        <a href="tvs.html" class="quick-access-link" id="raw-dog-link">
+            <div class="quick-access-item">
+                <div class="quick-access-icon">📺</div>
+                <div class="quick-access-label">RAW DOG BLUES</div>
+            </div>
+        </a>
+        
+        <a href="album.html" class="quick-access-link">
+            <div class="quick-access-item">
+                <div class="quick-access-icon">📸</div>
+                <div class="quick-access-label">PHOTO ALBUM</div>
+            </div>
+        </a>
+    </div>
+    
+    <!-- Mohegan Bluffs elements -->
+    <div class="mohegan-bluffs-room">
+        <div class="island-curtain left-curtain"></div>
+        <div class="island-curtain right-curtain"></div>
+        <div class="weathered-floor"></div>
+    </div>
+    
+    <div class="ghost-silhouettes">
+        <div class="silhouette" id="silhouette-1"></div>
+        <div class="silhouette" id="silhouette-2"></div>
+        <div class="silhouette" id="silhouette-3"></div>
+    </div>
+    
+    <div class="mysterious-objects">
+        <div class="mysterious-object" id="statue"></div>
+        <div class="mysterious-object" id="ring"></div>
+        <div class="mysterious-object" id="log"></div>
+    </div>
+    
+    <div class="portal-container dream-portal-container">
         <div class="portal-header">
-            <h1>UNVEIL THE SECRETS</h1>
-            <div class="portal-subtitle">CLICK THE SYMBOLS TO EXPLORE</div>
+            <h1 class="glitch-text">U<span class="flicker">N</span>VEIL THE <span class="backwards-text">SECRETS</span></h1>
+            <div class="portal-subtitle backwards-text">THERE ARE MANY WAYS IN, BUT FEW WAYS OUT</div>
+            
+            <div id="cryptic-navigation">
+                <span class="nav-symbol" id="nav-symbol-1">⌘</span>
+                <span class="nav-symbol" id="nav-symbol-2">⏣</span>
+                <span class="nav-symbol" id="nav-symbol-3">⏧</span>
+                <span class="nav-symbol" id="nav-symbol-4">⍟</span>
+                <span class="nav-symbol" id="nav-symbol-5">⎊</span>
+            </div>
         </div>
         
-        <div class="portal-map">
-            <div class="portal-item" id="palatine-portal">
+        <div class="lodge-welcome distorted-message">WELCOME TO THE ISLAND'S SECRETS</div>
+        
+        <div class="portal-map dreamscape-map">
+            <!-- Hidden easter egg in the map -->
+            <div class="easter-egg-map-trigger" id="map-easter-egg"></div>
+            
+            <div class="portal-item dream-item" id="palatine-portal">
                 <div class="portal-icon">🔥</div>
-                <div class="portal-label">THE PALATINE LIGHT</div>
+                <div class="portal-label dark-shadow">THE PALATINE LIGHT</div>
+                <div class="hidden-message">Some doors should remain closed</div>
             </div>
             
-            <div class="portal-item" id="pirates-portal">
+            <div class="portal-item dream-item" id="pirates-portal">
                 <div class="portal-icon">☠️</div>
-                <div class="portal-label">PIRATES & BOOTLEGGERS</div>
+                <div class="portal-label dark-shadow">PIRATES & BOOTLEGGERS</div>
+                <div class="hidden-message">Gold beneath your feet</div>
             </div>
             
-            <div class="portal-item" id="ghosts-portal">
+            <div class="portal-item dream-item" id="ghosts-portal">
                 <div class="portal-icon">👻</div>
-                <div class="portal-label">RESTLESS SPIRITS</div>
+                <div class="portal-label dark-shadow">RESTLESS SPIRITS</div>
+                <div class="hidden-message">They watch while you sleep</div>
             </div>
             
-            <div class="portal-item" id="societies-portal">
+            <div class="portal-item dream-item mirror-item" id="societies-portal">
                 <div class="portal-icon">🔍</div>
-                <div class="portal-label">SECRET SOCIETIES</div>
+                <div class="portal-label dark-shadow">SECRET SOCIETIES</div>
+                <div class="hidden-message">We know who you are</div>
             </div>
             
-            <div class="portal-item" id="rituals-portal">
+            <div class="portal-item dream-item" id="rituals-portal">
                 <div class="portal-icon">🌀</div>
-                <div class="portal-label">STRANGE RITUALS</div>
+                <div class="portal-label dark-shadow">STRANGE RITUALS</div>
+                <div class="hidden-message">Blood and sea salt</div>
             </div>
             
-            <div class="portal-item" id="taverns-portal">
+            <div class="portal-item dream-item" id="taverns-portal">
                 <div class="portal-icon">🍺</div>
-                <div class="portal-label">TAVERNS & TALES</div>
+                <div class="portal-label dark-shadow">TAVERNS & TALES</div>
+                <div class="hidden-message">Listen to the walls</div>
             </div>
             
-            <div class="portal-item" id="nature-portal">
+            <div class="portal-item dream-item" id="nature-portal">
                 <div class="portal-icon">🌊</div>
-                <div class="portal-label">NATURE'S MYSTERIES</div>
+                <div class="portal-label dark-shadow">NATURE'S MYSTERIES</div>
+                <div class="hidden-message">The island is alive</div>
             </div>
+            
+            <div class="portal-item dream-item hidden-portal" id="photo-portal">
+                <div class="portal-icon">📸</div>
+                <div class="portal-label dark-shadow">FORGOTTEN MEMORIES</div>
+                <div class="hidden-message">The camera caught something</div>
+            </div>
+            
+            <div class="portal-item dream-item hidden-portal" id="secret-portal">
+                <div class="portal-icon">🔮</div>
+                <div class="portal-label dark-shadow">THE DARK PATH</div>
+                <div class="hidden-message">Point of no return</div>
+            </div>
+            
+            <!-- Mohegan Circle (reference to Native American history) -->
+            <div class="giants-circle"></div>
         </div>
         
-        <div class="floating-message" id="floating-msg">
-            THE TRUTH IS STRANGER THAN FICTION
+        <div class="reality-break" id="reality-break">
+            <div class="break-message">SOMETHING IS WRONG</div>
+        </div>
+        
+        <div class="floating-message distorted-message" id="floating-msg">
+            HISTORY REPEATS ITSELF
+        </div>
+        
+        <div class="dreamscape-controls">
+            <div class="control-button" id="reverse-time">⟲</div>
+            <div class="control-button" id="break-reality">⌬</div>
+            <div class="control-button" id="return-home">⌂</div>
+        </div>
+        
+        <!-- Historical warning -->
+        <div class="historical-note">
+            <span class="backwards-text">THE SHIPWRECKS STILL HAUNT THESE WATERS</span>
         </div>
     </div>
     
-    <div class="portal-modal" id="modal-container">
-        <div class="modal-content">
-            <div class="modal-close">×</div>
-            <div class="modal-body" id="modal-body">
+    <div class="dream-sequence" id="dream-sequence">
+        <div class="dream-frame" id="dream-frame-1"></div>
+        <div class="dream-frame" id="dream-frame-2"></div>
+        <div class="dream-frame" id="dream-frame-3"></div>
+    </div>
+    
+    <div class="subliminal-images">
+        <img src="images/palatine-light.jpg" class="subliminal" id="subliminal-1">
+        <img src="images/block-island-map.jpg" class="subliminal" id="subliminal-2">
+        <img src="images/mohegan-bluffs.jpg" class="subliminal" id="subliminal-3">
+        <img src="images/easter_eggs/IMG_4923.png" class="subliminal" id="subliminal-4">
+        <img src="images/album/9F386079-C61A-4BC1-860E-4806DF1F2C71.png" class="subliminal" id="subliminal-5">
+    </div>
+    
+    <!-- Lighthouse icon -->
+    <div class="lighthouse-statue"></div>
+    
+    <div class="portal-modal dream-modal" id="modal-container">
+        <div class="modal-content distortion-effect">
+            <div class="modal-close glitch-text">×</div>
+            <div class="modal-body dream-modal-body" id="modal-body">
                 <!-- Content will be loaded here -->
             </div>
+            <div class="modal-whisper" id="modal-whisper"></div>
+            <div class="modal-easter-egg"></div>
         </div>
+    </div>
+    
+    <div id="quiz-container" class="quiz-container"></div>
+    
+    <div class="backwards-text-overlay" id="backwards-overlay">
+        MANISSES
+    </div>
+    
+    <!-- Historical figure easter egg -->
+    <div class="historical-figure" id="historical-figure"></div>
+    
+    <!-- Whispers that appear randomly -->
+    <div class="whisper-container">
+        <div class="whisper" id="whisper-1">the lighthouse keeper is watching</div>
+        <div class="whisper" id="whisper-2">the island remembers</div>
+        <div class="whisper" id="whisper-3">listen to the fog horn</div>
+        <div class="whisper" id="whisper-4">the Palatine Light guides lost souls</div>
+        <div class="whisper" id="whisper-5">bootleggers still hide in the coves</div>
+        <div class="whisper" id="whisper-6">check the old photographs</div>
     </div>
     
     <audio id="ambient-sound" loop>
         <source src="audio/waves.mp3" type="audio/mpeg">
     </audio>
     
+    <audio id="reality-break-sound">
+        <source src="audio/reality-break.mp3" type="audio/mpeg">
+    </audio>
+    
+    <audio id="whisper-sound">
+        <source src="audio/whisper.mp3" type="audio/mpeg">
+    </audio>
+    
+    <audio id="backwards-speech">
+        <source src="audio/backwards-speech.mp3" type="audio/mpeg">
+    </audio>
+    
     <script src="js/script.js"></script>
+    <script>
+        // Add special handling for photo portal
+        document.addEventListener('DOMContentLoaded', function() {
+            const photoPortal = document.getElementById('photo-portal');
+            if (photoPortal) {
+                photoPortal.addEventListener('click', function() {
+                    window.location.href = 'album.html';
+                });
+            }
+            
+            // Initialize map easter egg
+            const mapEasterEgg = document.getElementById('map-easter-egg');
+            if (mapEasterEgg) {
+                mapEasterEgg.style.position = 'absolute';
+                mapEasterEgg.style.width = '50px';
+                mapEasterEgg.style.height = '50px';
+                mapEasterEgg.style.top = '50%';
+                mapEasterEgg.style.left = '50%';
+                mapEasterEgg.style.transform = 'translate(-50%, -50%)';
+                mapEasterEgg.style.cursor = 'pointer';
+                mapEasterEgg.style.zIndex = '100';
+                mapEasterEgg.style.opacity = '0';
+                
+                // Occasionally reveal
+                setInterval(() => {
+                    if (Math.random() > 0.9) {
+                        mapEasterEgg.style.opacity = '0.3';
+                        setTimeout(() => {
+                            mapEasterEgg.style.opacity = '0';
+                        }, 500);
+                    }
+                }, 10000);
+                
+                // Click handler to show random photos
+                mapEasterEgg.addEventListener('click', function() {
+                    // Create overlay
+                    const photoOverlay = document.createElement('div');
+                    photoOverlay.classList.add('photo-flash-overlay');
+                    
+                    // Random photo from album
+                    const photos = [
+                        'images/album/1A8EF56C-FC86-48BE-A264-A96297A8FFAB.png',
+                        'images/album/AE3B10C2-48BB-4061-9990-A1645916011F.png',
+                        'images/album/9F386079-C61A-4BC1-860E-4806DF1F2C71.png',
+                        'images/album/5838E29F-DA42-4C5F-924D-E643F6409B98.png',
+                        'images/album/B4A1678D-B221-47EB-8699-5FBCB9F43B73.png'
+                    ];
+                    
+                    const randomPhoto = photos[Math.floor(Math.random() * photos.length)];
+                    
+                    photoOverlay.style.backgroundImage = `url(${randomPhoto})`;
+                    document.body.appendChild(photoOverlay);
+                    
+                    // Show effect
+                    setTimeout(() => {
+                        photoOverlay.classList.add('active');
+                        
+                        // Play sound
+                        const whisperSound = document.getElementById('whisper-sound');
+                        if (whisperSound) {
+                            whisperSound.currentTime = 0;
+                            whisperSound.play().catch(error => {
+                                console.log('Audio playback prevented: ', error);
+                            });
+                        }
+                        
+                        // Hide after brief moment
+                        setTimeout(() => {
+                            photoOverlay.classList.remove('active');
+                            
+                            setTimeout(() => {
+                                photoOverlay.remove();
+                            }, 500);
+                        }, 800);
+                    }, 100);
+                });
+            }
+        });
+    </script>
 </body>
 </html> 

@@ -1,5 +1,8 @@
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize dream sequence
+    initializeDreamSequence();
+    
     // Play ambient sound on user interaction
     document.body.addEventListener('click', function() {
         const ambientSound = document.getElementById('ambient-sound');
@@ -9,12 +12,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.log('Audio playback prevented: ', error);
             });
         }
+        
+        // Trigger dreamlike visual effects
+        triggerDreamEffect();
     }, { once: true });
 
     // Random flicker effect on page load
     setTimeout(() => {
         document.body.classList.add('loaded');
         randomFlicker();
+        initializeBackwardsSpeech();
     }, 500);
 
     // Handle portal item clicks
@@ -27,7 +34,8 @@ document.addEventListener('DOMContentLoaded', function() {
         portalItems.forEach(item => {
             item.addEventListener('click', function() {
                 const portalId = this.id;
-                openPortal(portalId);
+                // Add dream transition effect before opening portal
+                dreamTransition(() => openPortal(portalId));
             });
         });
     }
@@ -35,7 +43,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Close modal when clicking the X
     if (modalClose) {
         modalClose.addEventListener('click', function() {
-            closeModal();
+            // Add bizarre transition out
+            bizarreTransitionOut(() => closeModal());
         });
     }
 
@@ -43,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (modalContainer) {
         modalContainer.addEventListener('click', function(e) {
             if (e.target === modalContainer) {
-                closeModal();
+                bizarreTransitionOut(() => closeModal());
             }
         });
     }
@@ -59,10 +68,78 @@ document.addEventListener('DOMContentLoaded', function() {
     // Escape key to close modal
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && modalContainer && modalContainer.style.display === 'flex') {
-            closeModal();
+            bizarreTransitionOut(() => closeModal());
         }
     });
+    
+    // Cursor trail effect
+    initializeCursorTrail();
+    
+    // Initialize mysterious audio patterns
+    initializeMysteriousAudio();
+    
+    // Add cryptic mouse movement listeners
+    document.addEventListener('mousemove', handleMysteriousMouseMovement);
+    
+    // Initialize the reality shift effect
+    const realityShiftButton = document.getElementById('reality-shift');
+    if (realityShiftButton) {
+        realityShiftButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            initiateRealityShift();
+        });
+    }
+    
+    // Initialize secret portals that appear randomly
+    initializeSecretPortals();
+    
+    // Initialize the historical figure that occasionally appears
+    initializeHistoricalFigure();
+    
+    // Initialize the lighthouse beacon easter egg
+    initializeLighthouseBeacon();
+    
+    // Initialize Mohegan Bluffs features if we're on the portal page
+    if (document.body.classList.contains('portal-page')) {
+        initializeMoheganBluffs();
+    }
 });
+
+// Dream sequence initialization
+function initializeDreamSequence() {
+    const dreamSequence = document.getElementById('dream-sequence');
+    if (!dreamSequence) return;
+    
+    const dreamFrames = dreamSequence.querySelectorAll('.dream-frame');
+    
+    // Set random dream images
+    const dreamImages = [
+        'palatine-light.jpg', 
+        'block-island-1920.jpg', 
+        'mohegan-bluffs.jpg', 
+        'southeast-lighthouse.jpg', 
+        'beach-old.jpg', 
+        'bootleggers-map.jpg'
+    ];
+    
+    dreamFrames.forEach(frame => {
+        const randomImage = dreamImages[Math.floor(Math.random() * dreamImages.length)];
+        frame.style.backgroundImage = `url(images/${randomImage})`;
+        
+        // Add random animation delays
+        frame.style.animationDelay = (Math.random() * 5) + 's';
+    });
+    
+    // Occasionally flash dream images
+    setInterval(() => {
+        const randomFrame = dreamFrames[Math.floor(Math.random() * dreamFrames.length)];
+        randomFrame.classList.add('dream-flash');
+        
+        setTimeout(() => {
+            randomFrame.classList.remove('dream-flash');
+        }, 500);
+    }, 15000);
+}
 
 // Random flicker effect
 function randomFlicker() {
@@ -112,17 +189,45 @@ function openPortal(portalId) {
         case 'nature-portal':
             content = generateNatureContent();
             break;
+        case 'secret-portal':
+            content = generateSecretContent();
+            break;
         default:
-            content = '<h2>MYSTERIOUS PORTAL</h2><p>This gateway seems to lead nowhere...</p>';
+            content = generateDreamContent();
     }
     
     modalBody.innerHTML = content;
+    
+    // Add random whisper to the modal
+    const modalWhisper = document.getElementById('modal-whisper');
+    if (modalWhisper) {
+        const whispers = [
+            "Can you hear the ocean?",
+            "We've been here before",
+            "The island knows your name",
+            "They're watching from the shadows",
+            "Some doors should remain closed",
+            "That gum you like is going to come back in style",
+            "Through the darkness of future past"
+        ];
+        
+        modalWhisper.textContent = whispers[Math.floor(Math.random() * whispers.length)];
+    }
+    
+    // Show modal with Lynchian effect
     modalContainer.style.display = 'flex';
     
-    // Add fade-in effect
-    setTimeout(() => {
-        modalContainer.classList.add('fade-in');
-    }, 10);
+    // Play sound effect
+    const whisperSound = document.getElementById('whisper-sound');
+    if (whisperSound) {
+        whisperSound.currentTime = 0;
+        whisperSound.play().catch(error => {
+            console.log('Audio playback prevented: ', error);
+        });
+    }
+    
+    // Dispatch the event to let other components know a modal was opened
+    document.dispatchEvent(new CustomEvent('modalOpened'));
 }
 
 // Close modal
@@ -161,6 +266,499 @@ function updateFloatingMessage(element) {
         element.textContent = randomMsg;
         element.style.opacity = 1;
     }, 500);
+}
+
+// Initialize backwards speech
+function initializeBackwardsSpeech() {
+    const backwardsElements = document.querySelectorAll('.backwards-text');
+    if (backwardsElements.length === 0) return;
+    
+    backwardsElements.forEach(element => {
+        const originalText = element.textContent;
+        const backwardsText = originalText.split('').reverse().join('');
+        
+        element.setAttribute('data-original', originalText);
+        element.setAttribute('data-backwards', backwardsText);
+        
+        element.addEventListener('mouseenter', function() {
+            this.textContent = this.getAttribute('data-backwards');
+            playReversedAudio();
+        });
+        
+        element.addEventListener('mouseleave', function() {
+            this.textContent = this.getAttribute('data-original');
+        });
+    });
+}
+
+// Dream transition effect
+function dreamTransition(callback) {
+    const transitionOverlay = document.createElement('div');
+    transitionOverlay.classList.add('dream-transition-overlay');
+    document.body.appendChild(transitionOverlay);
+    
+    // Add zigzag pattern to the overlay
+    const zigzag = document.createElement('div');
+    zigzag.classList.add('zigzag-pattern');
+    transitionOverlay.appendChild(zigzag);
+    
+    setTimeout(() => {
+        transitionOverlay.classList.add('active');
+        
+        setTimeout(() => {
+            if (callback) callback();
+            
+            setTimeout(() => {
+                transitionOverlay.classList.remove('active');
+                
+                setTimeout(() => {
+                    transitionOverlay.remove();
+                }, 1000);
+            }, 500);
+        }, 1000);
+    }, 100);
+}
+
+// Bizarre transition out
+function bizarreTransitionOut(callback) {
+    const transitionOverlay = document.createElement('div');
+    transitionOverlay.classList.add('bizarre-transition-out');
+    document.body.appendChild(transitionOverlay);
+    
+    // Add static noise to the overlay
+    const staticNoise = document.createElement('div');
+    staticNoise.classList.add('static-noise');
+    transitionOverlay.appendChild(staticNoise);
+    
+    setTimeout(() => {
+        if (callback) callback();
+        
+        setTimeout(() => {
+            transitionOverlay.remove();
+        }, 1500);
+    }, 800);
+}
+
+// Initialize cursor trail
+function initializeCursorTrail() {
+    const trailContainer = document.createElement('div');
+    trailContainer.classList.add('cursor-trail-container');
+    document.body.appendChild(trailContainer);
+    
+    const trailCount = 15;
+    for (let i = 0; i < trailCount; i++) {
+        const trail = document.createElement('div');
+        trail.classList.add('cursor-trail');
+        trail.style.animationDelay = (i * 0.05) + 's';
+        trailContainer.appendChild(trail);
+    }
+    
+    let trails = document.querySelectorAll('.cursor-trail');
+    let trailIndex = 0;
+    
+    document.addEventListener('mousemove', function(e) {
+        const trail = trails[trailIndex];
+        trail.style.left = e.clientX + 'px';
+        trail.style.top = e.clientY + 'px';
+        
+        trail.classList.remove('active');
+        void trail.offsetWidth; // Force reflow
+        trail.classList.add('active');
+        
+        trailIndex = (trailIndex + 1) % trailCount;
+    });
+}
+
+// Initialize mysterious audio patterns
+function initializeMysteriousAudio() {
+    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    
+    // Create mysterious tones based on user movement
+    document.addEventListener('mousemove', function(e) {
+        if (Math.random() > 0.995) {
+            createMysteriousTone(audioContext, e);
+        }
+    });
+}
+
+// Create mysterious tone
+function createMysteriousTone(audioContext, event) {
+    const oscillator = audioContext.createOscillator();
+    const gainNode = audioContext.createGain();
+    
+    // Map screen position to frequency
+    const xFrequency = (event.clientX / window.innerWidth) * 200 + 150;
+    const yFrequency = (event.clientY / window.innerHeight) * 200 + 150;
+    
+    oscillator.type = ['sine', 'triangle', 'square'][Math.floor(Math.random() * 3)];
+    oscillator.frequency.value = Math.random() > 0.5 ? xFrequency : yFrequency;
+    
+    gainNode.gain.value = 0;
+    
+    oscillator.connect(gainNode);
+    gainNode.connect(audioContext.destination);
+    
+    oscillator.start();
+    
+    // Fade in
+    gainNode.gain.linearRampToValueAtTime(0.05, audioContext.currentTime + 0.1);
+    // Fade out
+    gainNode.gain.linearRampToValueAtTime(0, audioContext.currentTime + 2);
+    
+    // Stop after 2 seconds
+    setTimeout(() => {
+        oscillator.stop();
+    }, 2000);
+}
+
+// Handle mysterious mouse movement
+function handleMysteriousMouseMovement(e) {
+    // Occasionally distort the page when the user moves to certain "hot spots"
+    const hotSpotRadius = 50;
+    const hotSpots = [
+        { x: 100, y: 100 },
+        { x: window.innerWidth - 100, y: 100 },
+        { x: 100, y: window.innerHeight - 100 },
+        { x: window.innerWidth - 100, y: window.innerHeight - 100 },
+        { x: window.innerWidth / 2, y: window.innerHeight / 2 }
+    ];
+    
+    // Check if mouse is near a hot spot
+    for (const spot of hotSpots) {
+        const distance = Math.sqrt(Math.pow(e.clientX - spot.x, 2) + Math.pow(e.clientY - spot.y, 2));
+        
+        if (distance < hotSpotRadius) {
+            triggerDreamEffect();
+            break;
+        }
+    }
+}
+
+// Trigger dream-like visual effect
+function triggerDreamEffect() {
+    const body = document.body;
+    
+    // Add dream effect class
+    body.classList.add('dream-effect');
+    
+    // Play cryptic sound
+    const whisperSound = document.getElementById('whisper-sound');
+    if (whisperSound) {
+        whisperSound.currentTime = 0;
+        whisperSound.play().catch(error => {
+            console.log('Audio playback prevented: ', error);
+        });
+    }
+    
+    // Show random whisper
+    const whispers = document.querySelectorAll('.whisper');
+    if (whispers.length > 0) {
+        const randomWhisper = whispers[Math.floor(Math.random() * whispers.length)];
+        randomWhisper.classList.add('active');
+        
+        setTimeout(() => {
+            randomWhisper.classList.remove('active');
+        }, 3000);
+    }
+    
+    // Remove dream effect after a short time
+    setTimeout(() => {
+        body.classList.remove('dream-effect');
+    }, 1000);
+}
+
+// Reality shift to enter the main experience
+function initiateRealityShift() {
+    const body = document.body;
+    
+    // Add intense dream transition
+    body.classList.add('reality-shift');
+    
+    // Play transition sound
+    const realityBreakSound = document.getElementById('reality-break-sound');
+    if (realityBreakSound) {
+        realityBreakSound.play().catch(error => {
+            console.log('Audio playback prevented: ', error);
+        });
+    }
+    
+    // Show cryptic messages during transition
+    const crypticMessages = [
+        "THE PALATINE SHIP BURNS AGAIN",
+        "THROUGH THE MISTS OF TIME",
+        "THE SPIRITS OF MANISSES",
+        "WHERE ARE THE MOHEGAN BLUFFS?",
+        "IT IS HAPPENING AGAIN"
+    ];
+    
+    const crypticOverlay = document.createElement('div');
+    crypticOverlay.classList.add('cryptic-overlay');
+    document.body.appendChild(crypticOverlay);
+    
+    let messageIndex = 0;
+    
+    const showCrypticMessage = () => {
+        if (messageIndex >= crypticMessages.length) {
+            crypticOverlay.remove();
+            window.location.href = 'portal.html';
+            return;
+        }
+        
+        crypticOverlay.textContent = crypticMessages[messageIndex];
+        crypticOverlay.classList.add('active');
+        
+        setTimeout(() => {
+            crypticOverlay.classList.remove('active');
+            
+            setTimeout(() => {
+                messageIndex++;
+                showCrypticMessage();
+            }, 500);
+        }, 1500);
+    };
+    
+    showCrypticMessage();
+}
+
+// Initialize secret portals that appear randomly
+function initializeSecretPortals() {
+    setInterval(() => {
+        if (Math.random() > 0.9) {
+            createSecretPortal();
+        }
+    }, 30000);
+}
+
+// Create a secret portal that appears briefly
+function createSecretPortal() {
+    const portal = document.createElement('div');
+    portal.classList.add('secret-portal-overlay');
+    
+    // Add portal symbol
+    const symbol = document.createElement('div');
+    symbol.classList.add('portal-symbol');
+    symbol.innerHTML = '⊗';
+    portal.appendChild(symbol);
+    
+    // Add portal message
+    const message = document.createElement('div');
+    message.classList.add('portal-message');
+    message.textContent = 'CLICK TO ENTER MOHEGAN BLUFFS';
+    portal.appendChild(message);
+    
+    // Position randomly on screen
+    portal.style.left = (Math.random() * 70 + 15) + '%';
+    portal.style.top = (Math.random() * 70 + 15) + '%';
+    
+    document.body.appendChild(portal);
+    
+    // Fade in
+    setTimeout(() => {
+        portal.classList.add('active');
+    }, 100);
+    
+    // Add click event
+    portal.addEventListener('click', function() {
+        // Trigger intense transition
+        const body = document.body;
+        body.classList.add('bluffs-transition');
+        
+        // Play eerie sound
+        const whisperSound = document.getElementById('whisper-sound');
+        if (whisperSound) {
+            whisperSound.currentTime = 0;
+            whisperSound.play().catch(error => {
+                console.log('Audio playback prevented: ', error);
+            });
+        }
+        
+        setTimeout(() => {
+            body.classList.remove('bluffs-transition');
+            
+            // Show a hidden piece of content
+            showHiddenContent();
+        }, 2000);
+    });
+    
+    // Disappear after a while if not clicked
+    setTimeout(() => {
+        portal.classList.remove('active');
+        
+        setTimeout(() => {
+            portal.remove();
+        }, 1000);
+    }, 10000);
+}
+
+// Show hidden content that's only accessible through secret portals
+function showHiddenContent() {
+    const hiddenContent = document.createElement('div');
+    hiddenContent.classList.add('hidden-content');
+    
+    const contentInner = document.createElement('div');
+    contentInner.classList.add('hidden-content-inner');
+    
+    const closeButton = document.createElement('div');
+    closeButton.classList.add('hidden-content-close');
+    closeButton.textContent = '×';
+    
+    const title = document.createElement('h2');
+    title.textContent = 'THE HIDDEN TRUTHS OF BLOCK ISLAND';
+    title.classList.add('glitch-text');
+    
+    const content = document.createElement('div');
+    content.classList.add('hidden-content-text');
+    content.innerHTML = `
+        <p class="backwards-text">The island speaks in reversed whispers</p>
+        <p>There are places on this island where time moves differently.</p>
+        <p>In <span class="glitch-text">1929</span>, three fishermen reported seeing the same woman walking across the water.</p>
+        <p>The lighthouses communicate with each other in code.</p>
+        <p class="redacted">CLASSIFIED INFORMATION</p>
+        <p>Some visitors never truly leave.</p>
+    `;
+    
+    contentInner.appendChild(closeButton);
+    contentInner.appendChild(title);
+    contentInner.appendChild(content);
+    hiddenContent.appendChild(contentInner);
+    
+    document.body.appendChild(hiddenContent);
+    
+    setTimeout(() => {
+        hiddenContent.classList.add('active');
+    }, 100);
+    
+    closeButton.addEventListener('click', function() {
+        hiddenContent.classList.remove('active');
+        
+        setTimeout(() => {
+            hiddenContent.remove();
+        }, 1000);
+    });
+}
+
+// Initialize historical figure easter egg
+function initializeHistoricalFigure() {
+    const historicalFigure = document.getElementById('historical-figure');
+    if (!historicalFigure) return;
+    
+    // Occasionally show the historical figure
+    setInterval(() => {
+        if (Math.random() > 0.8) {
+            historicalFigure.classList.add('active');
+            
+            setTimeout(() => {
+                historicalFigure.classList.remove('active');
+            }, 5000);
+        }
+    }, 60000);
+    
+    // Allow clicking on the figure for an easter egg
+    historicalFigure.addEventListener('click', function() {
+        // Play whisper sound
+        const whisperSound = document.getElementById('whisper-sound');
+        if (whisperSound) {
+            whisperSound.currentTime = 0;
+            whisperSound.play().catch(error => {
+                console.log('Audio playback prevented: ', error);
+            });
+        }
+        
+        // Show cryptic message
+        const message = document.createElement('div');
+        message.classList.add('figure-message');
+        message.innerHTML = 'THE MANISSEANS STILL WALK THESE SHORES';
+        
+        document.body.appendChild(message);
+        
+        setTimeout(() => {
+            message.classList.add('active');
+            
+            setTimeout(() => {
+                message.classList.remove('active');
+                
+                setTimeout(() => {
+                    message.remove();
+                }, 1000);
+            }, 4000);
+        }, 100);
+    });
+}
+
+// Initialize the lighthouse beacon easter egg
+function initializeLighthouseBeacon() {
+    // Add event listener for lighthouse interactions
+    document.addEventListener('modalOpened', function() {
+        const modalEasterEgg = document.querySelector('.modal-easter-egg');
+        if (!modalEasterEgg) return;
+        
+        modalEasterEgg.addEventListener('click', triggerLighthouseBeacon);
+    });
+}
+
+// Trigger the lighthouse beacon effect
+function triggerLighthouseBeacon() {
+    // Play lighthouse sound
+    const whisperSound = document.getElementById('whisper-sound');
+    if (whisperSound) {
+        whisperSound.currentTime = 0;
+        whisperSound.play().catch(error => {
+            console.log('Audio playback prevented: ', error);
+        });
+    }
+    
+    // Show the lighthouse message
+    const lighthouseMessage = document.createElement('div');
+    lighthouseMessage.classList.add('lighthouse-message');
+    lighthouseMessage.textContent = 'THE PALATINE LIGHT STILL BURNS ON MOONLESS NIGHTS';
+    
+    document.body.appendChild(lighthouseMessage);
+    
+    setTimeout(() => {
+        lighthouseMessage.classList.add('active');
+        
+        setTimeout(() => {
+            lighthouseMessage.classList.remove('active');
+            
+            setTimeout(() => {
+                lighthouseMessage.remove();
+            }, 1000);
+        }, 3000);
+    }, 100);
+    
+    // Flash some lighthouse imagery
+    showLighthouseSilhouettes();
+}
+
+// Show lighthouse silhouettes
+function showLighthouseSilhouettes() {
+    const lighthouseContainer = document.createElement('div');
+    lighthouseContainer.classList.add('lighthouse-container');
+    
+    for (let i = 0; i < 5; i++) {
+        const lighthouse = document.createElement('div');
+        lighthouse.classList.add('lighthouse-silhouette');
+        lighthouse.style.left = `${Math.random() * 90 + 5}%`;
+        lighthouse.style.top = `${Math.random() * 90 + 5}%`;
+        lighthouse.style.animationDelay = `${Math.random() * 2}s`;
+        
+        lighthouseContainer.appendChild(lighthouse);
+    }
+    
+    document.body.appendChild(lighthouseContainer);
+    
+    // Play lighthouse sound
+    const whisperSound = document.getElementById('whisper-sound');
+    if (whisperSound) {
+        whisperSound.currentTime = 0;
+        whisperSound.play().catch(error => {
+            console.log('Audio playback prevented: ', error);
+        });
+    }
+    
+    setTimeout(() => {
+        lighthouseContainer.remove();
+    }, 10000);
 }
 
 // Content generators for each portal
@@ -303,4 +901,93 @@ function generateNatureContent() {
         
         <p>Even Block Island's <span class="highlight-text">flora and fauna</span> have an offbeat chapter. Notoriously, the island for a long time had <em>no</em> deer (and no squirrels, skunks, or raccoons either – the surrounding water kept land critters away). Instead, Block Island's signature animal was the humble cow.</p>
     `;
-} 
+}
+
+// Initialize Mohegan Bluffs specific elements
+function initializeMoheganBluffs() {
+    // Initialize the ethereal whispers
+    initializeWhispers();
+    
+    // Add random flicker to specific elements
+    const flickerElements = document.querySelectorAll('.flicker-text');
+    flickerElements.forEach(el => {
+        setInterval(() => {
+            el.classList.add('flicker');
+            setTimeout(() => el.classList.remove('flicker'), 200);
+        }, Math.random() * 5000 + 2000);
+    });
+    
+    // Add random movement to shadows
+    initializeShadowMovement();
+    
+    // Random special effects based on time spent
+    let timeOnPageSeconds = 0;
+    setInterval(() => {
+        timeOnPageSeconds++;
+        
+        // Every 45-60 seconds, trigger a random effect
+        if (timeOnPageSeconds % (Math.floor(Math.random() * 15) + 45) === 0) {
+            triggerRandomMoheganEffect();
+        }
+    }, 1000);
+}
+
+// Trigger a random Mohegan Bluffs effect
+function triggerRandomMoheganEffect() {
+    const effects = ['reverseWorld', 'showLighthouse', 'palatineFlames', 'mohegansEntrance', 'showBootleggers'];
+    const effect = effects[Math.floor(Math.random() * effects.length)];
+    
+    switch(effect) {
+        case 'reverseWorld':
+            document.body.classList.add('reverse-world');
+            setTimeout(() => document.body.classList.remove('reverse-world'), 5000);
+            break;
+        case 'showLighthouse':
+            showLighthouseSilhouettes();
+            break;
+        case 'palatineFlames':
+            showPalatineFlames();
+            break;
+        case 'mohegansEntrance':
+            showMoheganBluffsEntrance();
+            break;
+        case 'showBootleggers':
+            showBootleggers();
+            break;
+    }
+}
+
+// Generate special secret content
+function generateSecretContent() {
+    return `
+        <h2 class="glitch-text">THE MOHEGAN BLUFFS</h2>
+        <div class="content-section">
+            <p class="dark-shadow">Welcome to the <span class="backwards-text">Mohegan Bluffs</span>. This place exists beyond the physical realm of Block Island.</p>
+            <p class="dark-shadow">Here, time moves differently, and the rules of reality are... <span class="redacted">altered</span>.</p>
+            <div class="bluffs-symbol">⚠</div>
+            <blockquote class="dream-quote">"The island whispers to those who listen. The bluffs remember the blood of the Manisseans." - <span class="whisper-text">Island Folklore</span></blockquote>
+            <p class="dark-shadow">Those who enter may find themselves <span class="flicker">trapped</span> between worlds, wandering a coastline that never ends.</p>
+            <p class="dark-shadow backwards-text">The island's oldest secrets lie here</p>
+        </div>
+    `;
+}
+
+// Generate dream content for invalid/default portals
+function generateDreamContent() {
+    return `
+        <h2 class="glitch-text">DREAM SEQUENCE</h2>
+        <div class="content-section">
+            <p class="dark-shadow">You've entered a <span class="backwards-text">dream state</span>. In dreams, messages from the island come through more clearly.</p>
+            <p class="dark-shadow">The boundaries between past and present, <span class="redacted">reality and fiction</span>, become blurred.</p>
+            <blockquote class="dream-quote">"We live inside a dream." - <span class="whisper-text">Phillip Jeffries</span></blockquote>
+        </div>
+    `;
+}
+
+// Initialize quiz on page load
+window.addEventListener('load', function() {
+    const quizButton = document.getElementById('start-quiz');
+    if (quizButton) {
+        quizButton.addEventListener('click', startQuiz);
+    }
+}); 

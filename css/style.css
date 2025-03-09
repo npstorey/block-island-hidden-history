@@ -88,20 +88,13 @@ body {
 }
 
 .flicker {
-    animation: textFlicker 3s infinite;
+    animation: enhancedTextFlicker 3s infinite;
     color: #ff4a4a;
 }
 
-@keyframes textFlicker {
-    0% { opacity: 1; text-shadow: 0 0 10px rgba(255, 0, 0, 0.5); }
-    10% { opacity: 0.8; text-shadow: 0 0 10px rgba(255, 0, 0, 0.5); }
-    11% { opacity: 1; text-shadow: 0 0 10px rgba(255, 0, 0, 0.5); }
-    50% { opacity: 1; text-shadow: 0 0 10px rgba(255, 0, 0, 0.5); }
-    51% { opacity: 0.7; text-shadow: 0 0 10px rgba(255, 0, 0, 0.5); }
-    60% { opacity: 1; text-shadow: 0 0 10px rgba(255, 0, 0, 0.5); }
-    90% { opacity: 1; text-shadow: 0 0 10px rgba(255, 0, 0, 0.5); }
-    91% { opacity: 0.9; text-shadow: 0 0 10px rgba(255, 0, 0, 0.5); }
-    100% { opacity: 1; text-shadow: 0 0 10px rgba(255, 0, 0, 0.5); }
+@keyframes enhancedTextFlicker {
+    0%, 100% { opacity: 1; text-shadow: 0 0 10px rgba(255, 0, 0, 0.5); }
+    50% { opacity: 0.5; text-shadow: 0 0 20px rgba(255, 0, 0, 0.7); }
 }
 
 .subtitle {
@@ -236,8 +229,8 @@ body {
 }
 
 .portal-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
 }
 
 .portal-icon {
@@ -381,4 +374,3719 @@ body {
     .portal-label {
         font-size: 0.8rem;
     }
-} 
+}
+
+/* Parallax Scrolling Effect */
+.parallax {
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Enhanced Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Enhanced Portal Item Hover Effect */
+.portal-item:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+}
+
+/* Enhanced Text Flicker Effect */
+@keyframes enhancedTextFlicker {
+    0%, 100% { opacity: 1; text-shadow: 0 0 10px rgba(255, 0, 0, 0.5); }
+    50% { opacity: 0.5; text-shadow: 0 0 20px rgba(255, 0, 0, 0.7); }
+}
+
+.flicker {
+    animation: enhancedTextFlicker 3s infinite;
+}
+
+/* Lynch-inspired Film & Video Effects */
+.film-grain-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/grain.png');
+    opacity: 0.07;
+    z-index: 3;
+    pointer-events: none;
+    animation: grainAnimation 0.5s steps(6) infinite;
+}
+
+@keyframes grainAnimation {
+    0%, 100% { transform: translate(0, 0) }
+    10% { transform: translate(-2%, -2%) }
+    20% { transform: translate(2%, 2%) }
+    30% { transform: translate(-1%, 1%) }
+    40% { transform: translate(1%, -1%) }
+    50% { transform: translate(0.5%, 0.5%) }
+    60% { transform: translate(-0.5%, -0.5%) }
+}
+
+.vhs-effect {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, 
+        rgba(255,0,0,0.03) 0%, 
+        rgba(255,0,0,0) 50%, 
+        rgba(0,0,255,0.03) 100%);
+    pointer-events: none;
+    z-index: 4;
+    opacity: 0.5;
+    animation: vhsFlicker 8s linear infinite;
+}
+
+@keyframes vhsFlicker {
+    0% { opacity: 0.5; }
+    5% { opacity: 0.6; }
+    10% { opacity: 0.5; }
+    15% { opacity: 0.7; }
+    20% { opacity: 0.5; }
+    45% { opacity: 0.5; }
+    50% { opacity: 0.2; }
+    55% { opacity: 0.5; }
+    60% { opacity: 0.5; }
+    75% { opacity: 0.5; }
+    80% { opacity: 0.3; }
+    85% { opacity: 0.5; }
+    100% { opacity: 0.5; }
+}
+
+/* Dream Sequence Elements */
+.dream-container {
+    position: relative;
+    animation: dreamPulse 20s ease-in-out infinite;
+}
+
+@keyframes dreamPulse {
+    0%, 100% { transform: scale(1); filter: hue-rotate(0deg); }
+    50% { transform: scale(1.02); filter: hue-rotate(10deg); }
+}
+
+.dream-sequence {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.dream-frame {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 5s ease-in-out;
+}
+
+#dream-frame-1 {
+    background-image: url('../images/dream-1.jpg');
+    animation: dreamFade 30s ease-in-out infinite;
+}
+
+#dream-frame-2 {
+    background-image: url('../images/dream-2.jpg');
+    animation: dreamFade 30s ease-in-out 10s infinite;
+}
+
+#dream-frame-3 {
+    background-image: url('../images/dream-3.jpg');
+    animation: dreamFade 30s ease-in-out 20s infinite;
+}
+
+@keyframes dreamFade {
+    0%, 100% { opacity: 0; }
+    30%, 70% { opacity: 0.1; }
+    50% { opacity: 0.2; }
+}
+
+/* Text Styling */
+.glitch-text {
+    position: relative;
+    display: inline-block;
+    animation: glitchText 5s infinite;
+}
+
+@keyframes glitchText {
+    0%, 100% { text-shadow: 0 0 2px rgba(255,255,255,0.7), 0 0 5px rgba(255,0,0,0.5), 0 0 7px rgba(0,0,255,0.5); }
+    25% { text-shadow: -1px 0 red, 1px 0 blue; }
+    26% { text-shadow: 1px 0 red, -1px 0 blue; }
+    27% { text-shadow: 0 0 2px rgba(255,255,255,0.7), 0 0 5px rgba(255,0,0,0.5), 0 0 7px rgba(0,0,255,0.5); }
+    75% { text-shadow: 0 0 2px rgba(255,255,255,0.7), 0 0 5px rgba(255,0,0,0.5), 0 0 7px rgba(0,0,255,0.5); }
+    76% { text-shadow: 2px 0 green, -2px 0 orange; }
+    77% { text-shadow: -2px 0 green, 2px 0 orange; }
+    78% { text-shadow: 0 0 2px rgba(255,255,255,0.7), 0 0 5px rgba(255,0,0,0.5), 0 0 7px rgba(0,0,255,0.5); }
+}
+
+.whisper-text {
+    font-family: 'Shadows Into Light', cursive;
+    opacity: 0.8;
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
+.backwards-text {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    display: inline-block;
+}
+
+.redacted {
+    position: relative;
+    color: transparent;
+}
+
+.redacted::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #ff4a4a;
+}
+
+.dark-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.cryptic-text {
+    font-family: 'Special Elite', cursive;
+    letter-spacing: 3px;
+    animation: crypticPulse 10s ease-in-out infinite;
+}
+
+@keyframes crypticPulse {
+    0%, 100% { letter-spacing: 3px; opacity: 0.7; }
+    50% { letter-spacing: 5px; opacity: 1; }
+}
+
+.whisper-container {
+    position: fixed;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 0 10%;
+    z-index: 100;
+    pointer-events: none;
+}
+
+.whisper {
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.3);
+    opacity: 0;
+    text-transform: lowercase;
+    transform: rotate(-5deg);
+}
+
+#whisper-1 {
+    animation: whisperFade 25s ease-in-out 5s infinite;
+}
+
+#whisper-2 {
+    animation: whisperFade 30s ease-in-out 15s infinite;
+}
+
+#whisper-3 {
+    animation: whisperFade 20s ease-in-out 10s infinite;
+}
+
+@keyframes whisperFade {
+    0%, 100% { opacity: 0; }
+    10%, 15% { opacity: 0.3; }
+    12% { opacity: 0.5; }
+}
+
+/* Dream Portal Elements */
+.dream-portal-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.dreamscape-map {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    position: relative;
+}
+
+.dream-item {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dream-item:hover {
+    transform: translateY(-10px) scale(1.05) rotateY(10deg);
+    box-shadow: 0 15px 25px rgba(255, 255, 255, 0.1);
+}
+
+.dream-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255,0,0,0.1) 0%, rgba(0,0,255,0.1) 100%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.dream-item:hover::before {
+    opacity: 1;
+}
+
+.hidden-message {
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.3);
+    font-style: italic;
+    opacity: 0;
+    transition: all 0.5s ease;
+    transform: translateY(10px);
+}
+
+.dream-item:hover .hidden-message {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hidden-portal {
+    opacity: 0.2;
+    filter: blur(2px);
+    transition: all 1s ease;
+}
+
+.hidden-portal:hover {
+    opacity: 1;
+    filter: blur(0);
+}
+
+.mirror-item {
+    position: relative;
+}
+
+.mirror-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.mirror-item:hover::after {
+    opacity: 1;
+}
+
+/* Lynchian Red Room Elements */
+.red-room {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 2s ease;
+    pointer-events: none;
+}
+
+.red-room.active {
+    opacity: 1;
+}
+
+.red-curtain {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    background: radial-gradient(circle at center, #8b0000 0%, #4b0000 100%);
+    z-index: -1;
+    transition: transform 3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.left-curtain {
+    left: 0;
+    transform: translateX(-100%);
+}
+
+.right-curtain {
+    right: 0;
+    transform: translateX(100%);
+}
+
+.red-room.active .left-curtain {
+    transform: translateX(0);
+}
+
+.red-room.active .right-curtain {
+    transform: translateX(0);
+}
+
+/* Dream Navigation */
+#cryptic-navigation {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.nav-symbol {
+    font-size: 1.5rem;
+    margin: 0 15px;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: all 0.5s ease;
+}
+
+.nav-symbol:hover {
+    opacity: 1;
+    transform: scale(1.2);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+/* Dreamscape Controls */
+.dreamscape-controls {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+}
+
+.control-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.control-button:hover {
+    background: rgba(100, 0, 0, 0.5);
+    transform: scale(1.1);
+}
+
+/* Subliminal Images */
+.subliminal-images {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 200;
+}
+
+.subliminal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 80%;
+    max-height: 80%;
+    opacity: 0;
+}
+
+.backwards-text-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15vw;
+    font-family: 'Creepster', cursive;
+    color: rgba(255, 0, 0, 0.1);
+    pointer-events: none;
+    opacity: 0;
+    z-index: 150;
+    transition: opacity 0.5s ease;
+}
+
+/* Reality Breaking Effects */
+.reality-break {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px 30px;
+    border: 1px solid rgba(255, 0, 0, 0.3);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 300;
+    transition: opacity 0.5s ease;
+}
+
+.break-message {
+    font-family: 'Special Elite', cursive;
+    font-size: 1.5rem;
+    color: #ff0000;
+    animation: glitchText 1s infinite;
+}
+
+/* Dream Silhouettes */
+.dream-silhouettes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.silhouette {
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.05;
+    transition: opacity 5s ease;
+}
+
+#silhouette-1 {
+    top: 10%;
+    right: 5%;
+    width: 300px;
+    height: 500px;
+    background-image: url('../images/silhouette-1.png');
+}
+
+#silhouette-2 {
+    bottom: 5%;
+    left: 5%;
+    width: 250px;
+    height: 400px;
+    background-image: url('../images/silhouette-2.png');
+}
+
+#silhouette-3 {
+    top: 30%;
+    left: 10%;
+    width: 200px;
+    height: 350px;
+    background-image: url('../images/silhouette-3.png');
+}
+
+/* Enhanced Modal Styling */
+.dream-modal .modal-content {
+    background: rgba(0, 0, 0, 0.85);
+    border: 1px solid rgba(255, 0, 0, 0.2);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+    position: relative;
+    overflow: hidden;
+}
+
+.dream-modal-body {
+    position: relative;
+}
+
+.dream-modal-body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(139, 0, 0, 0.1) 0%, rgba(0, 0, 139, 0.1) 100%);
+    pointer-events: none;
+}
+
+.modal-whisper {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.3);
+    font-style: italic;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.distortion-effect {
+    position: relative;
+}
+
+.distortion-effect::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.1),
+        rgba(0, 0, 0, 0.1) 1px,
+        transparent 1px,
+        transparent 2px
+    );
+    pointer-events: none;
+    opacity: 0.3;
+}
+
+.distorted-message {
+    animation: distortMessage 20s ease-in-out infinite;
+}
+
+@keyframes distortMessage {
+    0%, 100% { transform: skew(0deg, 0deg); }
+    25% { transform: skew(2deg, 0deg); }
+    75% { transform: skew(-2deg, 0deg); }
+}
+
+/* Quiz Container */
+.quiz-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 500px;
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    z-index: 400;
+    display: none;
+}
+
+.quiz-container h2 {
+    font-family: 'Special Elite', cursive;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.quiz-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+.quiz-container li {
+    margin: 10px 0;
+    padding: 10px 15px;
+    background: rgba(50, 50, 50, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.quiz-container li:hover {
+    background: rgba(100, 0, 0, 0.5);
+}
+
+/* Lynch-inspired dream effects */
+.dream-transition-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0;
+    z-index: 9999;
+    transition: opacity 1s ease-in-out;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.dream-transition-overlay.active {
+    opacity: 1;
+}
+
+.zigzag-pattern {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(45deg, #000 25%, transparent 25%) 0 0,
+        linear-gradient(135deg, #000 25%, transparent 25%) 0 0,
+        linear-gradient(45deg, transparent 75%, #000 75%) 0 0,
+        linear-gradient(135deg, transparent 75%, #000 75%) 0 0;
+    background-size: 25px 25px;
+    background-color: #e4002b;
+    opacity: 0.3;
+    animation: zigzagMove 3s infinite linear;
+}
+
+@keyframes zigzagMove {
+    0% {
+        background-position: 0 0, 0 0, 0 0, 0 0;
+    }
+    100% {
+        background-position: 50px 50px, 50px 50px, 50px 50px, 50px 50px;
+    }
+}
+
+.bizarre-transition-out {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    pointer-events: none;
+    animation: bizarreOut 1.5s forwards;
+}
+
+@keyframes bizarreOut {
+    0% {
+        transform: scale(0);
+        clip-path: circle(0% at center);
+    }
+    50% {
+        transform: scale(1);
+        clip-path: circle(100% at center);
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+.static-noise {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/noise.png');
+    background-size: cover;
+    opacity: 0.2;
+    mix-blend-mode: screen;
+}
+
+/* Cursor trail effect */
+.cursor-trail-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9998;
+}
+
+.cursor-trail {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: rgba(255, 0, 0, 0.6);
+    transform: scale(0);
+    opacity: 0;
+    transition: transform 0.1s ease-out, opacity 0.5s ease-out;
+    pointer-events: none;
+}
+
+.cursor-trail.active {
+    transform: scale(1);
+    opacity: 1;
+    animation: pulseTrail 2s forwards;
+}
+
+@keyframes pulseTrail {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.5);
+        box-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+    }
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+/* Dream effect when triggered by hotspots */
+.dream-effect {
+    animation: dreamPulse 1s forwards;
+}
+
+@keyframes dreamPulse {
+    0% {
+        filter: none;
+    }
+    25% {
+        filter: hue-rotate(90deg) contrast(1.5) saturate(1.5);
+    }
+    50% {
+        filter: invert(0.1) blur(1px);
+    }
+    75% {
+        filter: saturate(2) contrast(1.5) brightness(1.2);
+    }
+    100% {
+        filter: none;
+    }
+}
+
+/* Reality shift effect */
+.reality-shift {
+    animation: realityShift 5s forwards;
+}
+
+@keyframes realityShift {
+    0% {
+        filter: none;
+    }
+    20% {
+        filter: invert(0.2) hue-rotate(90deg);
+    }
+    40% {
+        filter: sepia(0.5) saturate(2) blur(3px);
+    }
+    60% {
+        filter: invert(0.8) hue-rotate(180deg);
+    }
+    80% {
+        filter: grayscale(1) contrast(2) brightness(2);
+    }
+    100% {
+        filter: none;
+    }
+}
+
+.cryptic-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-family: 'Special Elite', cursive;
+    font-size: 3rem;
+    text-align: center;
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    padding: 2rem;
+}
+
+.cryptic-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Secret portal that appears randomly */
+.secret-portal-overlay {
+    position: fixed;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #000 30%, transparent 70%);
+    box-shadow: 0 0 30px #e4002b, inset 0 0 15px #e4002b;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9997;
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity 1s ease, transform 1s ease;
+    cursor: pointer;
+}
+
+.secret-portal-overlay.active {
+    opacity: 1;
+    transform: scale(1);
+    animation: portalPulse 2s infinite alternate;
+}
+
+@keyframes portalPulse {
+    0% {
+        box-shadow: 0 0 30px #e4002b, inset 0 0 15px #e4002b;
+    }
+    100% {
+        box-shadow: 0 0 50px #e4002b, inset 0 0 25px #e4002b;
+    }
+}
+
+.portal-symbol {
+    font-size: 3rem;
+    color: white;
+    text-shadow: 0 0 10px #e4002b;
+    margin-bottom: 10px;
+}
+
+.portal-message {
+    font-size: 0.8rem;
+    color: white;
+    font-family: 'Special Elite', cursive;
+    text-align: center;
+    text-shadow: 0 0 5px #e4002b;
+    opacity: 0.8;
+}
+
+/* Lodge transition effect */
+.lodge-transition {
+    animation: lodgeTransition 2s forwards;
+}
+
+@keyframes lodgeTransition {
+    0% {
+        filter: none;
+    }
+    25% {
+        filter: invert(1) hue-rotate(180deg);
+    }
+    50% {
+        filter: blur(10px) brightness(2);
+    }
+    75% {
+        filter: contrast(2) saturate(0);
+    }
+    100% {
+        filter: none;
+    }
+}
+
+/* Hidden content style */
+.hidden-content {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease, visibility 1s ease;
+}
+
+.hidden-content.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.hidden-content-inner {
+    width: 80%;
+    max-width: 600px;
+    background-color: #111;
+    border: 1px solid #e4002b;
+    padding: 2rem;
+    color: white;
+    font-family: 'Courier Prime', monospace;
+    position: relative;
+    box-shadow: 0 0 30px rgba(228, 0, 43, 0.3);
+}
+
+.hidden-content-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    color: #e4002b;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.hidden-content-close:hover {
+    transform: scale(1.2);
+}
+
+.hidden-content-text {
+    margin-top: 1.5rem;
+    line-height: 1.8;
+}
+
+.hidden-content-text p {
+    margin-bottom: 1rem;
+}
+
+/* Dream guide character */
+.dream-guide {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    z-index: 9996;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 2s ease, visibility 2s ease;
+    pointer-events: none;
+}
+
+.dream-guide.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.dream-guide-figure {
+    width: 80px;
+    height: 150px;
+    background-image: url('../images/dream-guide.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+}
+
+.dream-guide-speech {
+    max-width: 300px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-family: 'Special Elite', cursive;
+    padding: 1rem;
+    margin-left: 1rem;
+    border-radius: 5px;
+    position: relative;
+    line-height: 1.6;
+}
+
+.dream-guide-speech::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid rgba(0, 0, 0, 0.8);
+}
+
+/* Dream sequence frames */
+.dream-sequence {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.dream-frame {
+    position: absolute;
+    width: 200px;
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    filter: sepia(0.5) hue-rotate(30deg);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    animation: dreamFloat 20s infinite linear;
+}
+
+#dream-frame-1 {
+    top: 10%;
+    left: 5%;
+    animation-delay: 0s;
+}
+
+#dream-frame-2 {
+    top: 50%;
+    right: 10%;
+    animation-delay: 7s;
+}
+
+#dream-frame-3 {
+    bottom: 15%;
+    left: 30%;
+    animation-delay: 14s;
+}
+
+@keyframes dreamFloat {
+    0% {
+        opacity: 0;
+        transform: scale(0.8) translate(0, 0) rotate(0deg);
+    }
+    20% {
+        opacity: 0.2;
+        transform: scale(0.9) translate(20px, -10px) rotate(5deg);
+    }
+    40% {
+        opacity: 0.15;
+        transform: scale(1) translate(40px, 20px) rotate(-2deg);
+    }
+    60% {
+        opacity: 0.1;
+        transform: scale(0.9) translate(10px, 40px) rotate(2deg);
+    }
+    80% {
+        opacity: 0.05;
+        transform: scale(0.8) translate(-20px, 10px) rotate(-5deg);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.8) translate(0, 0) rotate(0deg);
+    }
+}
+
+.dream-flash {
+    animation: dreamFlash 0.5s forwards;
+}
+
+@keyframes dreamFlash {
+    0% {
+        opacity: 0.1;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 0.1;
+    }
+}
+
+/* Red Room inspired elements */
+.red-room {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.red-curtain {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-image: url('../images/red-curtain.png');
+    background-size: contain;
+    background-repeat: repeat;
+    opacity: 0.15;
+    z-index: 2;
+}
+
+.left-curtain {
+    left: -90%;
+    transform-origin: left center;
+    animation: curtainSway 20s infinite ease-in-out alternate;
+}
+
+.right-curtain {
+    right: -90%;
+    transform-origin: right center;
+    animation: curtainSway 25s infinite ease-in-out alternate-reverse;
+}
+
+@keyframes curtainSway {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(10%);
+    }
+}
+
+/* Whisper effects */
+.whisper.active {
+    opacity: 0.7;
+    visibility: visible;
+    animation: whisperFade 3s forwards;
+}
+
+@keyframes whisperFade {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    20% {
+        opacity: 0.7;
+        transform: translateY(0);
+    }
+    80% {
+        opacity: 0.7;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+/* Backwards text handling */
+.backwards-text {
+    display: inline-block;
+    transition: all 0.5s ease;
+    position: relative;
+    cursor: help;
+}
+
+.backwards-text::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(228, 0, 43, 0.6);
+}
+
+.backwards-text-overlay {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    color: #e4002b;
+    font-family: 'Special Elite', cursive;
+    font-size: 5rem;
+    text-shadow: 0 0 10px #000;
+    opacity: 0;
+    z-index: 10000;
+    pointer-events: none;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.backwards-text-overlay.active {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    animation: pulseText 2s forwards;
+}
+
+@keyframes pulseText {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.2);
+    }
+    90% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0);
+    }
+}
+
+/* Dream silhouettes that occasionally appear */
+.dream-silhouettes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.silhouette {
+    position: absolute;
+    width: 80px;
+    height: 200px;
+    background-image: url('../images/silhouette.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0;
+}
+
+#silhouette-1 {
+    top: 20%;
+    left: 5%;
+    animation: silhouetteAppear 30s infinite;
+}
+
+#silhouette-2 {
+    top: 50%;
+    right: 10%;
+    animation: silhouetteAppear 40s infinite;
+    animation-delay: 15s;
+}
+
+#silhouette-3 {
+    bottom: 10%;
+    left: 30%;
+    animation: silhouetteAppear 35s infinite;
+    animation-delay: 7s;
+}
+
+@keyframes silhouetteAppear {
+    0%, 100% {
+        opacity: 0;
+    }
+    49.9% {
+        opacity: 0;
+    }
+    50%, 52% {
+        opacity: 0.4;
+    }
+    52.1% {
+        opacity: 0;
+    }
+}
+
+/* Mirror item effect */
+.mirror-item {
+    transition: transform 0.5s ease;
+}
+
+.mirror-item:hover {
+    transform: scaleX(-1);
+}
+
+/* Distortion effect */
+.distortion-effect {
+    position: relative;
+    overflow: hidden;
+}
+
+.distortion-effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, 
+        transparent 0%, 
+        rgba(255,255,255,0.05) 50%, 
+        transparent 100%);
+    pointer-events: none;
+    animation: distortionScan 10s linear infinite;
+}
+
+@keyframes distortionScan {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+/* Cryptic navigation animations */
+.nav-symbol {
+    display: inline-block;
+    margin: 0 15px;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.nav-symbol:hover {
+    color: #e4002b;
+    text-shadow: 0 0 10px #e4002b;
+    transform: rotate(180deg) scale(1.2);
+}
+
+/* Reality break effect */
+.reality-break {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #000;
+    color: #e4002b;
+    font-family: 'Special Elite', cursive;
+    padding: 1rem 2rem;
+    border: 1px solid #e4002b;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 9995;
+    cursor: pointer;
+}
+
+.reality-break.active {
+    opacity: 1;
+    visibility: visible;
+    animation: realityBreakPulse 2s infinite alternate;
+}
+
+@keyframes realityBreakPulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        box-shadow: 0 0 10px #e4002b;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1.1);
+        box-shadow: 0 0 20px #e4002b;
+    }
+}
+
+.break-message {
+    font-size: 1.2rem;
+    text-shadow: 0 0 5px #e4002b;
+}
+
+/* Subliminal images */
+.subliminal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 80%;
+    max-height: 80%;
+    opacity: 0;
+    z-index: 9000;
+    pointer-events: none;
+}
+
+/* Dreamscape specific styles */
+.dreamscape-map .portal-item {
+    position: relative;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.dreamscape-map .portal-item:hover {
+    transform: scale(1.1) translateY(-10px);
+    z-index: 2;
+}
+
+.dreamscape-map .portal-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, transparent 30%, rgba(0,0,0,0.2) 70%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: -1;
+    border-radius: 50%;
+}
+
+.dreamscape-map .portal-item:hover::before {
+    opacity: 1;
+    animation: portalPulse 2s infinite alternate;
+}
+
+.hidden-message {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content;
+    font-family: 'Special Elite', cursive;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.dreamscape-map .portal-item:hover .hidden-message {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-5px);
+}
+
+/* Black Lodge specific styles */
+.zigzag-floor {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background-image: url('../images/zigzag-floor.png');
+    background-repeat: repeat;
+    background-size: 100px 100px;
+    opacity: 0.2;
+    z-index: 1;
+    transform: perspective(500px) rotateX(60deg);
+    transform-origin: bottom;
+}
+
+.lodge-welcome {
+    font-family: 'Special Elite', cursive;
+    font-size: 1.5rem;
+    color: #e4002b;
+    text-align: center;
+    margin-bottom: 2rem;
+    letter-spacing: 3px;
+    animation: lodgeWelcome 10s infinite alternate;
+}
+
+@keyframes lodgeWelcome {
+    0%, 100% {
+        opacity: 0.7;
+        transform: scale(1);
+        text-shadow: 0 0 10px rgba(228, 0, 43, 0.7);
+    }
+    50% {
+        opacity: 0.4;
+        transform: scale(0.98);
+        text-shadow: 0 0 5px rgba(228, 0, 43, 0.4);
+    }
+}
+
+/* Mysterious objects that float around */
+.mysterious-objects {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.mysterious-object {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.3;
+    filter: drop-shadow(0 0 5px rgba(228, 0, 43, 0.7));
+}
+
+#statue {
+    top: 20%;
+    left: 10%;
+    background-image: url('../images/statue.png');
+    animation: float 45s infinite linear;
+}
+
+#ring {
+    bottom: 15%;
+    right: 10%;
+    background-image: url('../images/ring.png');
+    animation: float 35s infinite linear reverse;
+}
+
+#log {
+    top: 40%;
+    right: 20%;
+    background-image: url('../images/log.png');
+    animation: float 40s infinite linear;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+    }
+    25% {
+        transform: translateY(20px) translateX(30px) rotate(90deg);
+    }
+    50% {
+        transform: translateY(40px) translateX(0) rotate(180deg);
+    }
+    75% {
+        transform: translateY(20px) translateX(-30px) rotate(270deg);
+    }
+    100% {
+        transform: translateY(0) translateX(0) rotate(360deg);
+    }
+}
+
+/* Giant's circle */
+.giants-circle {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    animation: circlePulse 10s infinite alternate;
+}
+
+@keyframes circlePulse {
+    0% {
+        width: 150px;
+        height: 150px;
+        border-color: rgba(255, 255, 255, 0.2);
+    }
+    50% {
+        width: 250px;
+        height: 250px;
+        border-color: rgba(228, 0, 43, 0.3);
+    }
+    100% {
+        width: 150px;
+        height: 150px;
+        border-color: rgba(255, 255, 255, 0.2);
+    }
+}
+
+/* Venus Statue - Black Lodge reference */
+.venus-statue {
+    position: fixed;
+    width: 80px;
+    height: 150px;
+    background-image: url('../images/venus.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    bottom: 50px;
+    right: 50px;
+    opacity: 0.2;
+    filter: sepia(0.5) hue-rotate(300deg);
+    z-index: 1;
+    animation: statueFlicker 20s infinite;
+}
+
+@keyframes statueFlicker {
+    0%, 100% {
+        opacity: 0.2;
+    }
+    5%, 7% {
+        opacity: 0.4;
+    }
+    50%, 52% {
+        opacity: 0;
+    }
+    80%, 82% {
+        opacity: 0.5;
+    }
+}
+
+/* Dancing dwarf easter egg */
+.dancing-dwarf {
+    position: fixed;
+    width: 100px;
+    height: 150px;
+    background-image: url('../images/dancing-dwarf.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    bottom: -150px;
+    left: 30px;
+    opacity: 0;
+    z-index: 10;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+.dancing-dwarf.active {
+    bottom: 20px;
+    opacity: 0.7;
+    animation: dwarfDance 2s infinite;
+}
+
+@keyframes dwarfDance {
+    0%, 100% {
+        transform: rotate(-5deg);
+    }
+    50% {
+        transform: rotate(5deg);
+    }
+}
+
+/* Doppelganger message */
+.doppelganger-message {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Special Elite', cursive;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.5);
+    text-align: center;
+    opacity: 0;
+    animation: doppelgangerReveal 30s infinite;
+}
+
+@keyframes doppelgangerReveal {
+    0%, 90%, 100% {
+        opacity: 0;
+    }
+    92%, 98% {
+        opacity: 0.7;
+    }
+}
+
+/* Modal easter egg */
+.modal-easter-egg {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-image: url('../images/owl.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    bottom: 10px;
+    right: 10px;
+    opacity: 0.3;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.modal-easter-egg:hover {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+/* Enhanced Black Lodge styling for existing elements */
+.portal-page.parallax::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, #000 0%, #1a0000 50%, #000 100%);
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.portal-page .dreamscape-map {
+    position: relative;
+    z-index: 3;
+}
+
+/* Enhance portal effects */
+.portal-item::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(228, 0, 43, 0.5) 0%, transparent 70%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all 0.5s ease;
+    z-index: -1;
+}
+
+.portal-item:hover::after {
+    width: 150px;
+    height: 150px;
+    opacity: 1;
+}
+
+/* Add pulsing effect to control buttons */
+.control-button {
+    position: relative;
+    overflow: hidden;
+}
+
+.control-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(228, 0, 43, 0.5) 0%, transparent 70%);
+    opacity: 0;
+    transform: scale(0);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.control-button:hover::before {
+    opacity: 1;
+    transform: scale(2);
+}
+
+/* Lynchian hover effect for all interactive elements */
+.nav-symbol, .control-button, .portal-item, .modal-close {
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.nav-symbol:hover, .control-button:hover, .portal-item:hover, .modal-close:hover {
+    text-shadow: 0 0 10px rgba(228, 0, 43, 0.7);
+    color: #e4002b;
+}
+
+/* Additional Lynch-inspired effects */
+
+/* Owl silhouettes */
+.owl-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9995;
+}
+
+.owl-silhouette {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-image: url('../images/owl.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0;
+    filter: brightness(0) invert(0.2);
+    animation: owlAppear 5s forwards;
+}
+
+@keyframes owlAppear {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    10%, 90% {
+        opacity: 0.7;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+}
+
+.owl-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    font-family: 'Special Elite', cursive;
+    font-size: 2rem;
+    color: white;
+    text-shadow: 0 0 10px rgba(228, 0, 43, 0.7);
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 1rem 2rem;
+    border: 1px solid #e4002b;
+    z-index: 10001;
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.owl-message.active {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Fire Walk With Me effect */
+.fire-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(to top, #e4002b, transparent);
+    opacity: 0;
+    animation: fireAppear 8s forwards;
+    pointer-events: none;
+    z-index: 9996;
+}
+
+@keyframes fireAppear {
+    0% {
+        opacity: 0;
+        height: 0;
+    }
+    10%, 90% {
+        opacity: 0.5;
+        height: 150px;
+    }
+    100% {
+        opacity: 0;
+        height: 0;
+    }
+}
+
+.fire-text {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    font-family: 'Special Elite', cursive;
+    font-size: 3rem;
+    color: #e4002b;
+    text-shadow: 0 0 15px rgba(228, 0, 43, 0.8);
+    z-index: 10001;
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.fire-text.active {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Red Room overlay effect */
+.red-room-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1a0000;
+    z-index: 10001;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.overlay-curtain {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    background-image: url('../images/red-curtain.png');
+    background-size: cover;
+    background-repeat: repeat;
+    transition: transform 2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.left-overlay-curtain {
+    left: 0;
+    transform: translateX(0);
+}
+
+.right-overlay-curtain {
+    right: 0;
+    transform: translateX(0);
+}
+
+.left-overlay-curtain.open {
+    transform: translateX(-100%);
+}
+
+.right-overlay-curtain.open {
+    transform: translateX(100%);
+}
+
+/* Dwarf message */
+.dwarf-message {
+    position: fixed;
+    bottom: 100px;
+    left: 100px;
+    max-width: 300px;
+    font-family: 'Special Elite', cursive;
+    font-size: 1.2rem;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 1rem;
+    border: 1px solid #e4002b;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+    z-index: 10001;
+}
+
+.dwarf-message.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Mirror overlay effect */
+.mirror-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 10001;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease, visibility 1s ease;
+}
+
+.mirror-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.reflection-container {
+    position: relative;
+    max-width: 80%;
+    width: 80%;
+    height: 60%;
+    background: linear-gradient(to bottom, 
+        rgba(60, 0, 0, 0.5) 0%, 
+        rgba(60, 0, 0, 0.3) 50%, 
+        rgba(60, 0, 0, 0.1) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    transform: scaleY(-1);
+    opacity: 0.7;
+    border: 1px solid rgba(228, 0, 43, 0.3);
+    box-shadow: 0 0 30px rgba(228, 0, 43, 0.2);
+    transition: all 1s ease;
+}
+
+.reflection {
+    filter: brightness(0.7) contrast(1.5) sepia(0.3);
+    animation: reflectionFlicker 3s infinite alternate;
+}
+
+@keyframes reflectionFlicker {
+    0%, 100% {
+        opacity: 0.7;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.doppel-message {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-family: 'Special Elite', cursive;
+    font-size: 2rem;
+    color: #e4002b;
+    text-shadow: 0 0 10px rgba(228, 0, 43, 0.7);
+    animation: doppelMessage 4s forwards;
+}
+
+@keyframes doppelMessage {
+    0% {
+        opacity: 0;
+        transform: scale(0.5) scaleY(-1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1) scaleY(-1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.5) scaleY(-1);
+    }
+}
+
+/* Electrical interference effect */
+.electrical-interference {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.1),
+        rgba(0, 0, 0, 0.1) 1px,
+        transparent 1px,
+        transparent 2px
+    );
+    pointer-events: none;
+    z-index: 10000;
+    opacity: 0;
+    animation: scanline 0.1s infinite linear;
+    transition: opacity 0.2s ease;
+}
+
+.electrical-interference.active {
+    opacity: 0.8;
+}
+
+@keyframes scanline {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 50px;
+    }
+}
+
+/* Reverse world effect */
+.reverse-world {
+    animation: reverseWorldEffect 5s forwards;
+}
+
+@keyframes reverseWorldEffect {
+    0% {
+        filter: none;
+        transform: scale(1);
+    }
+    20% {
+        filter: invert(0.2) hue-rotate(180deg);
+        transform: scale(0.95);
+    }
+    40% {
+        filter: invert(0.8) hue-rotate(0deg);
+        transform: scale(0.9) scaleX(-1);
+    }
+    80% {
+        filter: invert(0.2) hue-rotate(180deg);
+        transform: scale(0.95) scaleX(-1);
+    }
+    100% {
+        filter: none;
+        transform: scale(1);
+    }
+}
+
+/* Lodge symbol */
+.lodge-symbol {
+    font-size: 3rem;
+    color: #e4002b;
+    text-align: center;
+    margin: 1rem 0;
+    animation: pulseLodgeSymbol 2s infinite alternate;
+}
+
+@keyframes pulseLodgeSymbol {
+    0% {
+        text-shadow: 0 0 10px rgba(228, 0, 43, 0.5);
+        transform: scale(1);
+    }
+    100% {
+        text-shadow: 0 0 20px rgba(228, 0, 43, 0.8);
+        transform: scale(1.1);
+    }
+}
+
+/* TV Room and Old TV Frames Styles */
+
+/* TV Room page specific styling */
+.tv-room-page {
+    background-color: #000;
+    color: #fff;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.tv-room-page::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, #000 0%, #0a0a0a 50%, #000 100%);
+    opacity: 0.8;
+    z-index: -1;
+}
+
+.tv-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 2rem auto;
+    position: relative;
+    z-index: 2;
+    padding: 2rem;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.page-header h1 {
+    font-family: 'Special Elite', cursive;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px rgba(228, 0, 43, 0.7);
+}
+
+.transmission-message {
+    font-family: 'Special Elite', cursive;
+    font-size: 1.5rem;
+    color: #e4002b;
+    text-align: center;
+    margin-bottom: 2rem;
+    letter-spacing: 3px;
+    animation: transmissionPulse 10s infinite alternate;
+}
+
+@keyframes transmissionPulse {
+    0%, 100% {
+        opacity: 0.7;
+        transform: scale(1);
+        text-shadow: 0 0 10px rgba(228, 0, 43, 0.7);
+    }
+    50% {
+        opacity: 0.4;
+        transform: scale(0.98);
+        text-shadow: 0 0 5px rgba(228, 0, 43, 0.4);
+    }
+}
+
+/* TV Set Container */
+.tv-set-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+    margin: 3rem 0;
+}
+
+/* Individual TV Set */
+.tv-set {
+    position: relative;
+    width: 320px;
+    height: 360px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    cursor: pointer;
+}
+
+.tv-set:hover {
+    transform: scale(1.05);
+    z-index: 3;
+}
+
+/* TV Frame */
+.tv-frame {
+    width: 300px;
+    height: 250px;
+    background-color: #333;
+    border-radius: 20px;
+    padding: 20px;
+    position: relative;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(to bottom, #444 0%, #222 100%);
+    border: 10px solid #111;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* TV Screen */
+.tv-screen {
+    width: 260px;
+    height: 170px;
+    background-color: #000;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+.tv-content {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.9;
+    filter: brightness(1.2) contrast(1.1) saturate(1.1);
+}
+
+/* TV Static Effect */
+.tv-static {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/static.png');
+    opacity: 0.03;
+    pointer-events: none;
+    animation: staticNoise 0.1s infinite;
+    z-index: 2;
+}
+
+@keyframes staticNoise {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+/* TV Controls */
+.tv-controls {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 20px;
+    margin-top: 10px;
+}
+
+.tv-knob {
+    width: 20px;
+    height: 20px;
+    background-color: #888;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.tv-set:hover .tv-knob {
+    transform: rotate(30deg);
+}
+
+/* TV Speaker */
+.tv-speaker {
+    width: 100px;
+    height: 10px;
+    background: repeating-linear-gradient(
+        90deg,
+        #333,
+        #333 3px,
+        #444 3px,
+        #444 6px
+    );
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* TV Label */
+.tv-label {
+    font-family: 'Special Elite', cursive;
+    font-size: 1rem;
+    color: #fff;
+    text-align: center;
+    margin-top: 1rem;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+    letter-spacing: 1px;
+}
+
+/* TV Screen Interaction Effects */
+.tv-screen::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, 
+        rgba(255, 255, 255, 0.1) 0%, 
+        transparent 20%, 
+        transparent 80%, 
+        rgba(255, 255, 255, 0.1) 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.tv-set:hover .tv-screen::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.5);
+    opacity: 0.5;
+    animation: scanline 3s linear infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes scanline {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(170px);
+    }
+}
+
+/* Transmission Controls */
+.transmission-controls {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* Mohegan Bluffs Room (replacing Red Room) */
+.mohegan-bluffs-room {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.island-curtain {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-image: url('../images/island-curtain.png');
+    background-size: contain;
+    background-repeat: repeat;
+    opacity: 0.15;
+    z-index: 2;
+}
+
+.weathered-floor {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background-image: url('../images/weathered-floor.png');
+    background-repeat: repeat;
+    background-size: 100px 100px;
+    opacity: 0.2;
+    z-index: 1;
+    transform: perspective(500px) rotateX(60deg);
+    transform-origin: bottom;
+}
+
+/* Ghost silhouettes (replacing dream silhouettes) */
+.ghost-silhouettes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Historical note */
+.historical-note {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Special Elite', cursive;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.5);
+    text-align: center;
+    opacity: 0;
+    animation: historicalReveal 30s infinite;
+}
+
+@keyframes historicalReveal {
+    0%, 90%, 100% {
+        opacity: 0;
+    }
+    92%, 98% {
+        opacity: 0.7;
+    }
+}
+
+/* Lighthouse statue (replacing Venus statue) */
+.lighthouse-statue {
+    position: fixed;
+    width: 80px;
+    height: 150px;
+    background-image: url('../images/lighthouse-icon.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    bottom: 50px;
+    right: 50px;
+    opacity: 0.2;
+    filter: sepia(0.5) hue-rotate(300deg);
+    z-index: 1;
+    animation: lighthouseFlicker 20s infinite;
+}
+
+@keyframes lighthouseFlicker {
+    0%, 100% {
+        opacity: 0.2;
+    }
+    5%, 7% {
+        opacity: 0.4;
+    }
+    50%, 52% {
+        opacity: 0;
+    }
+    80%, 82% {
+        opacity: 0.5;
+    }
+}
+
+/* Historical figure easter egg (replacing Dancing Dwarf) */
+.historical-figure {
+    position: fixed;
+    width: 100px;
+    height: 150px;
+    background-image: url('../images/historical-figure.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    bottom: -150px;
+    left: 30px;
+    opacity: 0;
+    z-index: 10;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+.historical-figure.active {
+    bottom: 20px;
+    opacity: 0.7;
+    animation: figureMove 2s infinite;
+}
+
+@keyframes figureMove {
+    0%, 100% {
+        transform: rotate(-5deg);
+    }
+    50% {
+        transform: rotate(5deg);
+    }
+}
+
+/* Enhanced Raw Dog Luz Icon */
+.raw-dog-icon {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #e4002b;
+    border-radius: 50%;
+    background-image: url('../images/raw-dog-icon.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    z-index: 9999;
+    opacity: 0.9;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(228, 0, 43, 0.8);
+}
+
+.raw-dog-icon:hover {
+    transform: scale(1.1);
+    opacity: 1;
+    box-shadow: 0 0 20px rgba(228, 0, 43, 1);
+}
+
+/* Responsive styles for TV room */
+@media (max-width: 768px) {
+    .tv-set-container {
+        gap: 2rem;
+    }
+    
+    .tv-set {
+        width: 280px;
+        height: 320px;
+    }
+    
+    .tv-frame {
+        width: 260px;
+        height: 220px;
+    }
+    
+    .tv-screen {
+        width: 220px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .tv-set-container {
+        gap: 1.5rem;
+    }
+    
+    .tv-set {
+        width: 240px;
+        height: 280px;
+    }
+    
+    .tv-frame {
+        width: 220px;
+        height: 190px;
+    }
+    
+    .tv-screen {
+        width: 180px;
+        height: 120px;
+    }
+}
+
+/* TV Easter Egg Message */
+.tv-easter-egg-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    font-family: 'Special Elite', cursive;
+    font-size: 2rem;
+    color: white;
+    text-shadow: 0 0 10px rgba(228, 0, 43, 0.7);
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 1rem 2rem;
+    border: 1px solid #e4002b;
+    z-index: 10001;
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    text-align: center;
+    max-width: 80%;
+}
+
+.tv-easter-egg-message.active {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Historical figure message */
+.figure-message {
+    position: fixed;
+    bottom: 100px;
+    left: 100px;
+    max-width: 300px;
+    font-family: 'Special Elite', cursive;
+    font-size: 1.2rem;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 1rem;
+    border: 1px solid #e4002b;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+    z-index: 10001;
+}
+
+.figure-message.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Page fade out transition */
+.fade-out {
+    animation: fadeOutTransition 1s forwards;
+}
+
+@keyframes fadeOutTransition {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Bootleggers overlay effect */
+.bootleggers-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 10001;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease, visibility 1s ease;
+}
+
+.bootleggers-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.bootleggers-container {
+    position: relative;
+    max-width: 80%;
+    width: 80%;
+    height: 60%;
+    background: linear-gradient(to bottom, 
+        rgba(40, 40, 60, 0.5) 0%, 
+        rgba(40, 40, 60, 0.3) 50%, 
+        rgba(40, 40, 60, 0.1) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    opacity: 0.7;
+    border: 1px solid rgba(0, 50, 100, 0.3);
+    box-shadow: 0 0 30px rgba(0, 50, 100, 0.2);
+    transition: all 1s ease;
+}
+
+.bootleggers {
+    filter: brightness(0.7) contrast(1.5) sepia(0.3);
+    animation: bootleggersFlicker 3s infinite alternate;
+}
+
+@keyframes bootleggersFlicker {
+    0%, 100% {
+        opacity: 0.7;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.bootleggers-message {
+    position: absolute;
+    top: -50px;
+    width: 100%;
+    text-align: center;
+    font-family: 'Special Elite', cursive;
+    font-size: 2rem;
+    color: #0066cc;
+    text-shadow: 0 0 10px rgba(0, 100, 200, 0.7);
+    animation: bootleggersMessage 4s forwards;
+}
+
+@keyframes bootleggersMessage {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+}
+
+/* Mohegan overlay (replacing Red Room overlay) */
+.mohegan-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #00141a;
+    z-index: 10001;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Lighthouse silhouettes (replacing owl silhouettes) */
+.lighthouse-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9995;
+}
+
+.lighthouse-silhouette {
+    position: absolute;
+    width: 60px;
+    height: 80px;
+    background-image: url('../images/lighthouse-icon.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0;
+    filter: brightness(0) invert(0.2);
+    animation: lighthouseAppear 5s forwards;
+}
+
+@keyframes lighthouseAppear {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    10%, 90% {
+        opacity: 0.7;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+}
+
+/* Bluffs transition effect */
+.bluffs-transition {
+    animation: bluffsTransition 2s forwards;
+}
+
+@keyframes bluffsTransition {
+    0% {
+        filter: none;
+    }
+    25% {
+        filter: invert(1) hue-rotate(180deg);
+    }
+    50% {
+        filter: blur(10px) brightness(2);
+    }
+    75% {
+        filter: contrast(2) saturate(0);
+    }
+    100% {
+        filter: none;
+    }
+}
+
+/* Quick Access Navigation */
+.quick-access-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.quick-access-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.quick-access-item {
+    width: 160px;
+    height: 160px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    cursor: pointer;
+}
+
+.quick-access-item:hover {
+    transform: scale(1.05);
+    border-color: rgba(228, 0, 43, 0.7);
+    box-shadow: 0 0 20px rgba(228, 0, 43, 0.4);
+}
+
+.quick-access-icon {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.quick-access-label {
+    font-family: 'Special Elite', cursive;
+    font-size: 1rem;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+#raw-dog-link .quick-access-item {
+    background-color: rgba(40, 0, 0, 0.7);
+}
+
+#raw-dog-link .quick-access-item:hover {
+    background-color: rgba(60, 0, 0, 0.8);
+}
+
+/* Update portal.html to use the same navigation style */
+.portal-page .quick-access-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    gap: 1rem;
+    margin: 0;
+}
+
+.portal-page .quick-access-item {
+    width: 100px;
+    height: 80px;
+    padding: 0.5rem;
+}
+
+.portal-page .quick-access-icon {
+    font-size: 2rem;
+    margin-bottom: 0.3rem;
+}
+
+.portal-page .quick-access-label {
+    font-size: 0.7rem;
+}
+
+/* Responsive styles for quick access navigation */
+@media (max-width: 768px) {
+    .quick-access-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .quick-access-item {
+        width: 140px;
+        height: 140px;
+    }
+}
+
+/* Mohegan Bluffs Elements */
+.mohegan-bluffs-element {
+    position: relative;
+    margin: 1rem 0;
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    box-shadow: 0 0 15px rgba(0, 128, 128, 0.5);
+}
+
+/* Mohegan Bluffs inspired elements */
+.mohegan-container {
+    position: relative;
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 1px solid #bf9039;
+    margin: 2rem 0;
+    box-shadow: 0 0 20px rgba(191, 144, 57, 0.3);
+}
+
+/* Mohegan Bluffs specific styles */
+.mohegan-bluffs-container {
+    position: relative;
+    padding: 2rem;
+    background-color: #000;
+    border: 5px solid #bf9039;
+    margin: 2rem 0;
+}
+
+/* Palatine Light - Block Island legend */
+.palatine-light {
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    background-color: #f08700;
+    border-radius: 50%;
+    box-shadow: 0 0 30px #f08700;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 9999;
+    animation: lightPulse 4s infinite;
+}
+
+@keyframes lightPulse {
+    0% { opacity: 0.3; transform: scale(0.8); }
+    50% { opacity: 0.8; transform: scale(1.2); }
+    100% { opacity: 0.3; transform: scale(0.8); }
+}
+
+/* Historical figure easter egg */
+.historical-figure {
+    position: fixed;
+    width: 120px;
+    height: 200px;
+    background-image: url('../images/manissean-figure.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translateX(-200px);
+    transition: opacity 1s ease, transform 2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.historical-figure.active {
+    opacity: 0.8;
+    pointer-events: auto;
+    transform: translateX(50px);
+}
+
+.figure-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    font-family: 'Special Elite', cursive;
+    font-size: 2rem;
+    color: white;
+    text-shadow: 0 0 10px rgba(191, 144, 57, 0.7);
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 1rem 2rem;
+    border: 1px solid #bf9039;
+    z-index: 10001;
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.figure-message.active {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Mohegan overlay */
+.mohegan-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 9998;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+/* Lighthouse silhouettes */
+.lighthouse-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.lighthouse-silhouette {
+    position: absolute;
+    width: 100px;
+    height: 200px;
+    background-image: url('../images/lighthouse.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0;
+    animation: lighthouseAppear 5s forwards;
+}
+
+@keyframes lighthouseAppear {
+    0% { opacity: 0; }
+    15% { opacity: 0.7; }
+    30% { opacity: 0; }
+    45% { opacity: 0.5; }
+    60% { opacity: 0; }
+    75% { opacity: 0.3; }
+    100% { opacity: 0; }
+}
+
+.lighthouse-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    font-family: 'Special Elite', cursive;
+    font-size: 2rem;
+    color: white;
+    text-shadow: 0 0 10px rgba(240, 135, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 1rem 2rem;
+    border: 1px solid #f08700;
+    z-index: 10001;
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.lighthouse-message.active {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Mohegan Bluffs overlay effect */
+.mohegan-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 9998;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.figure-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    font-family: 'Special Elite', cursive;
+    font-size: 2rem;
+    color: white;
+    text-shadow: 0 0 10px rgba(191, 144, 57, 0.7);
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 1rem 2rem;
+    border: 1px solid #bf9039;
+    z-index: 10001;
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.figure-message.active {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Block Island Statue - Manissean reference */
+.manissean-statue {
+    position: absolute;
+    width: 80px;
+    height: 200px;
+    background-image: url('../images/historical-figure.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.4;
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* Beach Wallpaper Background */
+.beach-wallpaper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/wallpapers/IMG_6915.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+    z-index: -1;
+    filter: sepia(50%) contrast(120%);
+    pointer-events: none;
+}
+
+.beach-wallpaper.wave-effect {
+    animation: waveMotion 3s ease-in-out;
+}
+
+@keyframes waveMotion {
+    0% { transform: scale(1) rotate(0deg); }
+    25% { transform: scale(1.02) rotate(0.5deg); }
+    50% { transform: scale(1.01) rotate(-0.5deg); }
+    75% { transform: scale(1.03) rotate(0.3deg); }
+    100% { transform: scale(1) rotate(0deg); }
+}
+
+/* Album Teaser Section */
+.album-teaser {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    max-width: 90%;
+}
+
+.teaser-text {
+    flex: 1;
+    padding-right: 1rem;
+}
+
+.teaser-text h3 {
+    font-family: 'Special Elite', cursive;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.album-preview {
+    position: relative;
+    width: 200px;
+    height: 150px;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.album-preview:hover {
+    transform: scale(1.05);
+    border-color: rgba(240, 135, 0, 0.7);
+    box-shadow: 0 0 15px rgba(240, 135, 0, 0.4);
+}
+
+.album-preview.clicked {
+    transform: scale(0.95);
+    opacity: 0.7;
+}
+
+.preview-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: sepia(50%) contrast(110%);
+    transition: all 0.3s ease;
+}
+
+.album-preview:hover .preview-photo img {
+    filter: sepia(30%) contrast(120%) brightness(110%);
+}
+
+.preview-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-family: 'Special Elite', cursive;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Movie Poster Easter Egg */
+.easter-egg-trigger {
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 9000;
+    transition: all 0.3s ease;
+}
+
+.easter-egg-trigger.reveal {
+    background-color: rgba(240, 135, 0, 0.5);
+    box-shadow: 0 0 15px rgba(240, 135, 0, 0.7);
+}
+
+.poster-gallery {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+.poster-gallery.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.gallery-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    background-color: rgba(20, 20, 20, 0.95);
+    padding: 2rem;
+    border: 2px solid rgba(240, 135, 0, 0.7);
+    overflow-y: auto;
+}
+
+.gallery-title {
+    font-family: 'Special Elite', cursive;
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.gallery-subtitle {
+    font-family: 'Courier Prime', monospace;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.posters-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.movie-poster {
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.movie-poster img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.movie-poster:hover {
+    transform: scale(1.03);
+    border-color: rgba(240, 135, 0, 0.7);
+    box-shadow: 0 0 15px rgba(240, 135, 0, 0.4);
+}
+
+.movie-poster.flicker {
+    opacity: 0.7;
+    filter: brightness(1.5);
+}
+
+.gallery-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.gallery-close:hover {
+    background-color: rgba(240, 135, 0, 0.7);
+    transform: rotate(90deg);
+}
+
+.gallery-note {
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-style: italic;
+    padding: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Channel Change & Easter Egg Content */
+.easter-egg-content {
+    filter: sepia(30%) hue-rotate(20deg) !important;
+}
+
+.tv-easter-egg-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    font-family: 'Special Elite', cursive;
+    font-size: 1.5rem;
+    color: white;
+    text-shadow: 0 0 10px rgba(240, 135, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 1rem 2rem;
+    border: 1px solid #f08700;
+    z-index: 10001;
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.tv-easter-egg-message.active {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.subliminal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10001;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.subliminal-container.active {
+    opacity: 1;
+}
+
+.subliminal-flash {
+    max-width: 50%;
+    max-height: 50%;
+    filter: brightness(1.2) contrast(1.2);
+}
+
+/* TV Screen Adjustment Effects */
+.tv-screen.vertical-adjust {
+    animation: verticalTrackingIssue 3s ease-in-out;
+}
+
+.tv-screen.horizontal-adjust {
+    animation: horizontalTrackingIssue 3s ease-in-out;
+}
+
+@keyframes verticalTrackingIssue {
+    0% { transform: scaleY(1); }
+    10% { transform: scaleY(0.9); }
+    20% { transform: scaleY(1.1); }
+    30% { transform: scaleY(0.8); }
+    40% { transform: scaleY(1.2); }
+    50% { transform: scaleY(0.9); }
+    60% { transform: scaleY(1.1); }
+    70% { transform: scaleY(0.95); }
+    80% { transform: scaleY(1.05); }
+    90% { transform: scaleY(0.98); }
+    100% { transform: scaleY(1); }
+}
+
+@keyframes horizontalTrackingIssue {
+    0% { transform: translateX(0); }
+    10% { transform: translateX(20px); }
+    20% { transform: translateX(-15px); }
+    30% { transform: translateX(10px); }
+    40% { transform: translateX(-5px); }
+    50% { transform: translateX(0); }
+    60% { transform: translateX(-10px); }
+    70% { transform: translateX(15px); }
+    80% { transform: translateX(-20px); }
+    90% { transform: translateX(5px); }
+    100% { transform: translateX(0); }
+}
+
+/* Photo Album Page Styles */
+.album-page {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Courier Prime', monospace;
+}
+
+.album-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.album-grid {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.album-section {
+    margin-bottom: 2rem;
+}
+
+.section-title {
+    font-family: 'Special Elite', cursive;
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 0.5rem;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.photo-item {
+    position: relative;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    padding: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.photo-item:hover {
+    transform: scale(1.03);
+    border-color: rgba(240, 135, 0, 0.7);
+    box-shadow: 0 0 15px rgba(240, 135, 0, 0.4);
+}
+
+.photo-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: filter 0.3s ease;
+}
+
+.photo-caption {
+    padding: 0.5rem 0;
+    font-family: 'Special Elite', cursive;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+}
+
+.photo-item:hover .photo-caption {
+    color: #fff;
+}
+
+.photo-flicker {
+    filter: brightness(1.5) !important;
+}
+
+.photo-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+.photo-modal .modal-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    background-color: rgba(20, 20, 20, 0.95);
+    padding: 2rem;
+    border: 2px solid rgba(240, 135, 0, 0.7);
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.enlarged-photo {
+    margin-bottom: 1.5rem;
+    max-width: 100%;
+    max-height: 70vh;
+}
+
+.enlarged-photo img {
+    max-width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+    filter: sepia(30%) contrast(110%);
+}
+
+.photo-story {
+    font-family: 'Courier Prime', monospace;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    padding: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.eerie-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.eerie-overlay.active {
+    opacity: 1;
+}
+
+.easter-egg-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+.easter-egg-modal.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.easter-egg-content {
+    position: relative;
+    max-width: 500px;
+    background-color: rgba(20, 20, 20, 0.95);
+    padding: 2rem;
+    border: 2px solid rgba(240, 135, 0, 0.7);
+    text-align: center;
+}
+
+.easter-egg-title {
+    font-family: 'Special Elite', cursive;
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.easter-egg-image {
+    max-width: 100%;
+    max-height: 50vh;
+    margin-bottom: 1rem;
+    filter: sepia(30%) contrast(110%);
+}
+
+.easter-egg-description {
+    font-family: 'Courier Prime', monospace;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1rem;
+}
+
+.easter-egg-close {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.easter-egg-close:hover {
+    color: rgba(240, 135, 0, 0.7);
+    transform: rotate(90deg);
+}
+
+@media (max-width: 768px) {
+    .album-teaser {
+        flex-direction: column;
+    }
+    
+    .teaser-text {
+        margin-bottom: 1rem;
+        padding-right: 0;
+    }
+    
+    .photo-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+    
+    .posters-container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .photo-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .posters-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Photo Flash Overlay */
+.photo-flash-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 10001;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.photo-flash-overlay.active {
+    opacity: 1;
+}
+
+/* Home Page Easter Egg Overlay */
+.home-easter-egg-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 10001;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 5vh;
+}
+
+.home-easter-egg-overlay.active {
+    opacity: 1;
+}
+
+.overlay-text {
+    font-family: 'Courier Prime', monospace;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 1rem 2rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(240, 135, 0, 0.7);
+    text-align: center;
+    max-width: 80%;
+}

@@ -1,0 +1,384 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base Styles */
+body {
+    font-family: 'Courier Prime', monospace;
+    background-color: #000;
+    color: #f0f0f0;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* Noise Overlay */
+.noise-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/noise.png');
+    opacity: 0.05;
+    z-index: 2;
+    pointer-events: none;
+    animation: noiseAnimation 0.5s steps(10) infinite;
+}
+
+@keyframes noiseAnimation {
+    0% { transform: translate(0,0) }
+    10% { transform: translate(-5%,-5%) }
+    20% { transform: translate(10%,5%) }
+    30% { transform: translate(-10%,10%) }
+    40% { transform: translate(5%,-10%) }
+    50% { transform: translate(-5%,5%) }
+    60% { transform: translate(10%,10%) }
+    70% { transform: translate(-10%,-5%) }
+    80% { transform: translate(5%,5%) }
+    90% { transform: translate(-5%,-10%) }
+    100% { transform: translate(0,0) }
+}
+
+/* Entry Page Styles */
+.entry {
+    background: linear-gradient(45deg, #000, #1a1a1a, #000);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50% }
+    50% { background-position: 100% 50% }
+    100% { background-position: 0% 50% }
+}
+
+.entry-content {
+    text-align: center;
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.main-title {
+    font-family: 'Special Elite', cursive;
+    font-size: 3rem;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.flicker {
+    animation: textFlicker 3s infinite;
+    color: #ff4a4a;
+}
+
+@keyframes textFlicker {
+    0% { opacity: 1; text-shadow: 0 0 10px rgba(255, 0, 0, 0.5); }
+    10% { opacity: 0.8; text-shadow: 0 0 10px rgba(255, 0, 0, 0.5); }
+    11% { opacity: 1; text-shadow: 0 0 10px rgba(255, 0, 0, 0.5); }
+    50% { opacity: 1; text-shadow: 0 0 10px rgba(255, 0, 0, 0.5); }
+    51% { opacity: 0.7; text-shadow: 0 0 10px rgba(255, 0, 0, 0.5); }
+    60% { opacity: 1; text-shadow: 0 0 10px rgba(255, 0, 0, 0.5); }
+    90% { opacity: 1; text-shadow: 0 0 10px rgba(255, 0, 0, 0.5); }
+    91% { opacity: 0.9; text-shadow: 0 0 10px rgba(255, 0, 0, 0.5); }
+    100% { opacity: 1; text-shadow: 0 0 10px rgba(255, 0, 0, 0.5); }
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: #aaa;
+    letter-spacing: 3px;
+}
+
+.entry-portal {
+    margin: 40px 0;
+}
+
+.portal-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #333, #000);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.portal-circle:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+}
+
+.portal-circle:before {
+    content: '';
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 1px dashed rgba(255, 255, 255, 0.2);
+    animation: spin 20s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.portal-text {
+    font-family: 'Special Elite', cursive;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    color: #fff;
+}
+
+.entry-warning {
+    margin-top: 20px;
+    font-size: 0.8rem;
+    color: #ff4a4a;
+    letter-spacing: 1px;
+}
+
+.entry-quote {
+    font-style: italic;
+    margin-top: 40px;
+    color: #aaa;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+/* Portal Page Styles */
+.portal-page {
+    background: url('../images/map-bg.jpg') center center no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.portal-container {
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.portal-header {
+    text-align: center;
+    padding: 30px 0;
+}
+
+.portal-header h1 {
+    font-family: 'Special Elite', cursive;
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.portal-subtitle {
+    font-size: 1rem;
+    color: #aaa;
+    letter-spacing: 2px;
+}
+
+.portal-map {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding: 50px 0;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.portal-item {
+    width: 180px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.portal-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+}
+
+.portal-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.portal-label {
+    text-align: center;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.floating-message {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-family: 'Special Elite', cursive;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.5);
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Modal Styles */
+.portal-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.modal-content {
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: #111;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 30px;
+    position: relative;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #aaa;
+    transition: color 0.3s;
+}
+
+.modal-close:hover {
+    color: #fff;
+}
+
+.modal-body {
+    padding: 10px 0;
+}
+
+.modal-body h2 {
+    font-family: 'Special Elite', cursive;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    color: #ff4a4a;
+}
+
+.modal-body p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.modal-body img {
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.modal-body img:hover {
+    opacity: 1;
+}
+
+.highlight-text {
+    color: #ff4a4a;
+    font-weight: bold;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 2rem;
+    }
+    
+    .portal-map {
+        gap: 20px;
+    }
+    
+    .portal-item {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .entry-content {
+        padding: 20px;
+    }
+    
+    .portal-map {
+        gap: 15px;
+    }
+    
+    .portal-item {
+        width: 120px;
+        height: 120px;
+        padding: 10px;
+    }
+    
+    .portal-icon {
+        font-size: 2rem;
+    }
+    
+    .portal-label {
+        font-size: 0.8rem;
+    }
+} 

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLOCK ISLAND: HIDDEN HISTORY - PORTAL</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Special+Elite&display=swap" rel="stylesheet">
+</head>
+<body class="portal-page">
+    <div class="noise-overlay"></div>
+    
+    <div class="portal-container">
+        <div class="portal-header">
+            <h1>UNVEIL THE SECRETS</h1>
+            <div class="portal-subtitle">CLICK THE SYMBOLS TO EXPLORE</div>
+        </div>
+        
+        <div class="portal-map">
+            <div class="portal-item" id="palatine-portal">
+                <div class="portal-icon">🔥</div>
+                <div class="portal-label">THE PALATINE LIGHT</div>
+            </div>
+            
+            <div class="portal-item" id="pirates-portal">
+                <div class="portal-icon">☠️</div>
+                <div class="portal-label">PIRATES & BOOTLEGGERS</div>
+            </div>
+            
+            <div class="portal-item" id="ghosts-portal">
+                <div class="portal-icon">👻</div>
+                <div class="portal-label">RESTLESS SPIRITS</div>
+            </div>
+            
+            <div class="portal-item" id="societies-portal">
+                <div class="portal-icon">🔍</div>
+                <div class="portal-label">SECRET SOCIETIES</div>
+            </div>
+            
+            <div class="portal-item" id="rituals-portal">
+                <div class="portal-icon">🌀</div>
+                <div class="portal-label">STRANGE RITUALS</div>
+            </div>
+            
+            <div class="portal-item" id="taverns-portal">
+                <div class="portal-icon">🍺</div>
+                <div class="portal-label">TAVERNS & TALES</div>
+            </div>
+            
+            <div class="portal-item" id="nature-portal">
+                <div class="portal-icon">🌊</div>
+                <div class="portal-label">NATURE'S MYSTERIES</div>
+            </div>
+        </div>
+        
+        <div class="floating-message" id="floating-msg">
+            THE TRUTH IS STRANGER THAN FICTION
+        </div>
+    </div>
+    
+    <div class="portal-modal" id="modal-container">
+        <div class="modal-content">
+            <div class="modal-close">×</div>
+            <div class="modal-body" id="modal-body">
+                <!-- Content will be loaded here -->
+            </div>
+        </div>
+    </div>
+    
+    <audio id="ambient-sound" loop>
+        <source src="audio/waves.mp3" type="audio/mpeg">
+    </audio>
+    
+    <script src="js/script.js"></script>
+</body>
+</html> 
